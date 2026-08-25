@@ -111,7 +111,7 @@ What is the difference between $null and empty string?,"$null means no value, an
 What is the difference between $PSVersionTable and $Host?,"$PSVersionTable shows PowerShell version info, $Host gives host environment info."
 What is the difference between -and and &&?,"-and is a logical operator on boolean expressions. In PowerShell 7 and later, && and || are pipeline chain operators that run the next command based on the previous command's success; Windows PowerShell 5.1 does not have them."
 What is the difference between -eq and -like operators?,"-eq tests equality, while -like supports wildcard pattern matching."
-"What is the difference between `$PROFILE`, `$MyInvocation`, and `$PSScriptRoot`?","`$PROFILE` is the profile path, `$MyInvocation` provides script context, `$PSScriptRoot` is the script’s folder path."
+"What is the difference between `$PROFILE`, `$MyInvocation`, and `$PSScriptRoot`?","`$PROFILE` is the profile path, `$MyInvocation` provides script context, `$PSScriptRoot` is the script's folder path."
 What is the difference between `Write-Output` and `Return`?,`Write-Output` sends data to the pipeline; `Return` exits a function with a value.
 "What is the difference between `Write-Output`, `Write-Host`, and `Write-Verbose`?","`Write-Output` sends to pipeline, `Write-Host` writes to console, `Write-Verbose` logs when enabled."
 What is the difference between a parameter and an argument?,"Parameter is defined in the function signature, argument is the value passed."

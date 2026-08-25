@@ -28,6 +28,7 @@ DECKS = {
     "kql": "KQL",
     "bicep": "Bicep",
     "cybersecurity": "Cybersecurity",
+    "aws-scs-c03": "AWS Security Specialty",
 }
 
 COLLECTION = Path.home() / ".local/share/Anki2/User 1/collection.anki2"

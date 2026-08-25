@@ -17,6 +17,7 @@ date in the deck's section below.
 | [kql](kql/) | 118 | Kusto Query Language for logs and hunting, from operators through time series, checked current in August 2026 |
 | [bicep](bicep/) | 50 | Bicep from the language through pipelines and deployment stacks, with the Terraform contrasts, checked current in August 2026 |
 | [cybersecurity](cybersecurity/) | 184 | Security fundamentals across network, cloud, application, and governance, backup and recovery included, checked current in August 2026 |
+| [aws-scs-c03](aws-scs-c03/) | 426 | AWS Certified Security Specialty (SCS-C03), service facts through the C03 additions, checked current in August 2026 |
 
 More subjects land here one at a time.
 
@@ -64,6 +65,19 @@ controls and their attacks, web vulnerabilities and their defenses,
 cloud posture, identity models, incident response, governance and the
 major compliance frameworks, and a backup and recovery section from
 the 3-2-1 rule through immutability and restore testing.
+
+## AWS Security Specialty (SCS-C03)
+
+The deep deck: logging and monitoring internals (CloudTrail event
+types, CloudWatch, Athena, VPC Flow Logs and what they miss), network
+security (endpoints, PrivateLink, Transit Gateway, NACL and security
+group behavior), edge protection (CloudFront, WAF, Shield), identity
+(policies, boundaries, STS, Identity Center, Cognito), encryption
+(KMS, envelope encryption, the SSE variants, CloudHSM), incident
+response, and the SCS-C03 additions: Verified Access, Security Lake
+and OCSF, resource control policies, and declarative policies. Facts
+only, no practice questions; the exam names appear because the deck
+tracks that exam's scope.
 
 ## Updating
 

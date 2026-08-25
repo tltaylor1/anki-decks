@@ -38,7 +38,7 @@ How do you handle time zones in KQL?,"KQL datetimes are UTC. Use datetime_utc_to
 How do you identify sessions that lasted longer than X minutes?,Calculate session duration using datetime_diff() and filter accordingly.
 How do you identify slow-running queries?,"Use the portal's query diagnostics, or .show queries in Azure Data Explorer, and filter by duration."
 How do you join across large datasets efficiently?,Use 'hint.shufflekey' or pre-aggregate data before joining.
-How do you join multiple services’ logs?,"Use 'join' with common fields like user_Id, session_Id."
+How do you join multiple services' logs?,"Use 'join' with common fields like user_Id, session_Id."
 How do you limit resource usage in complex queries?,Use 'set query_take_max_records' or optimize filters.
 How do you limit the number of rows returned?,Use the 'take' or 'limit' operator.
 How do you merge time-series data from multiple sources?,"Use 'union', then 'summarize' and 'bin' for time grouping."
@@ -111,9 +111,9 @@ What is the purpose of the 'where' clause in KQL?,To filter records based on a s
 What is the use of 'bag_unpack()'?,Unpacks dynamic objects into separate columns.
 What is the use of the 'extend' operator?,Adds calculated columns to a result set.
 What is the use of the 'render' operator?,"To visualize data, e.g., render timechart, barchart, piechart."
-What’s the difference between 'count' and 'countif'?,'count' counts all rows; 'countif' counts rows meeting a condition.
-"What’s the difference between 'has', 'contains', and '=='?","'has' checks for word presence, 'contains' for substring, '==' for exact match."
-What’s the difference between 'invoke' and 'execute'?,'invoke' calls functions in KQL; 'execute' is not used in KQL.
-What’s the difference between 'render timechart' and 'barchart'?,"Timechart shows trends over time, barchart compares static values."
-What’s the use of 'case()' in KQL?,Implements conditional branching like an if-else block.
-What’s your approach to debugging KQL queries?,"Start small, add filters incrementally, and verify intermediate output."
+What's the difference between 'count' and 'countif'?,'count' counts all rows; 'countif' counts rows meeting a condition.
+"What's the difference between 'has', 'contains', and '=='?","'has' checks for word presence, 'contains' for substring, '==' for exact match."
+What's the difference between 'invoke' and 'execute'?,'invoke' calls functions in KQL; 'execute' is not used in KQL.
+What's the difference between 'render timechart' and 'barchart'?,"Timechart shows trends over time, barchart compares static values."
+What's the use of 'case()' in KQL?,Implements conditional branching like an if-else block.
+What's your approach to debugging KQL queries?,"Start small, add filters incrementally, and verify intermediate output."

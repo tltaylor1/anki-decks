@@ -1,0 +1,427 @@
+front,back
+Are CloudTrail DataEvents enabled by default,"No, because they are very high volume."
+Are CloudTrail insights events enabled by default?,"No, they are a paid feature"
+Are CloudWatch logs encrypted by default?,"Yes, at rest with service-managed keys; a KMS customer-managed key is optional per log group."
+Are NACLs implicit deny or implicit allow?,"Implicit deny, but AWS puts an explicit allow in them."
+Are parameter policies offered in standard SSM Parameter store?,No
+AWS Direct Connect,Private dedicated network link Azure: Azure ExpressRoute
+AWS Well-Architected Framework,"Describes key concepts, design principles, and architectural best practices for designing and running workloads in the cloud."
+By default what permissions does a CFM stack assume?,The role of the user
+Can a subnet span across multiple AZs?,No
+Can upload functions be done through cloudfront?,No
+Can you disable EBS encryption on an encrypted volume?,No
+Can you do VPC peering between organizations?,Yes
+Can you do VPC traffic mirroring if the interfaces are in different VPCs?,"Yes you can, but you must have VPC peering enabled between those interfaces."
+Can you make a presigned URL for an object you have no access to?,"Yes you can, but the URL will not be useful."
+Can you place a SG on a NATGW?,No
+Can you use the same DEK for encrypted EBS volumes?,No
+Can you use VPC peering to allow one VPC to contact a VPC Endpoint Gateway?,No
+Can your NLB and ENI/GWLB be in different availability zones with VPC peering?,No
+Control Tower vs AWS Organizations: which does what?,Organizations is the underlying account/policy structure; Control Tower is an opinionated layer on top that automates landing-zone setup and guardrails.
+Customer-managed vs AWS-managed KMS key: difference?,"Customer-managed = you control policy, rotation, grants, can disable/delete. AWS-managed = created/controlled by the service, no rotation control."
+Do instance stores persist across a stop/start?,No
+Do instance stores persist across reboot?,Yes
+Do NACLs follow an order with their rules?,Yes
+Do security groups have an explicit deny?,No
+Do you manage the DNSSEC KSK?,Yes
+Do you manage the DNSSEC ZSK?,"No, managed by AWS"
+Do you need a CGW with AWS direct connect?,No you do not
+Do you need private DNS configured to use privatelink,"Private DNS is strongly recommended, so the service's default DNS names resolve to your endpoint instead of the public internet."
+Does DNSSEC work in private hosted zones?,No
+Does KMS directly decrypt EBS volumes?,No
+"Does NAT GW work with VPCPeering, Site to Site VPNs, or Dx?",No
+Does WAF provide DDOS protection?,"No, AWS shield does this"
+GuardDuty vs Security Hub vs Detective: which is which?,GuardDuty = detects threats. Security Hub = aggregates/normalizes findings. Detective = investigates root cause and attack paths.
+How are routes shared between CGW and VGW,BGP session between the two
+How can a transit gateway improve bandwidth for a site to site VPN?,It can do ECMP across two different site to site VPN connections.
+How can AWS Config aggregators help in a multi-account setup?,"They collect AWS Config data from multiple accounts and regions, providing centralized compliance visibility."
+How can AWS Cost Explorer help identify security risks?,"By analyzing spending anomalies or spikes, which could indicate unauthorized activity, over-provisioning, or forgotten resources."
+How can CloudHSM be used for encryption at rest?,"CloudHSM provides dedicated hardware security modules for customer-managed keys, often used with databases like RDS, or workloads requiring FIPS 140-2 Level 3."
+How can CloudWatch composite alarms reduce noise?,You can configure alarms with AND/OR conditions so that a notification is only sent if certain conditions are true.
+How can cross-account roles enhance security and manageability?,"They allow secure access between AWS accounts without sharing long-term credentials, using assume-role policies and trust relationships."
+How can customers bring their own keys (BYOK) to AWS KMS?,Use the Import Key feature in KMS to upload externally generated key material into a KMS key.
+How can logs be normalized and parsed for analysis?,"Use tools like AWS Glue, Amazon Athena with structured queries, or custom Lambda functions to convert logs to common formats (e.g., JSON)."
+How can MFA be enabled and enforced in AWS?,"You can enable MFA on IAM users or roles, and enforce it in policies using Conditions (e.g., `aws:MultiFactorAuthPresent` set to true)."
+How can Security Hub be used to create custom monitoring rules?,"You can create Custom Insights in Security Hub using filters on findings to detect specific patterns, and trigger responses using EventBridge."
+How can tag-based permissions be implemented in IAM?,"Use attribute-based access control (ABAC) by creating IAM policies that evaluate tags on the resource and the requester's identity (e.g., `aws:ResourceTag/Project`)."
+How can you access an event bus from a separate AWS account?,Resource based policies
+How can you achieve high availability with VGW?,Have two different on prem routers connecting to VGW.
+How can you aggregate all CloudTrail logs across multiple accounts to one account?,Use a management account as a hub and member account as spokes.
+How can you capture forensic data from a compromised instance?,"Take EBS snapshots, memory dumps, and log exports. Use S3 Object Lock to preserve data."
+How can you configure your ALB to only accept traffic from CloudFront? (two things),1. Configure the ALB to only forward requests with a custom preshared HTTP Header. 2. Restrict access to your ALB to CloudFront Public IPs only.
+How can you correlate security data across AWS services?,"Use AWS Security Hub for centralizing findings, AWS Detective for investigation, and Amazon EventBridge for event routing between services."
+How can you enforce encryption in transit for connections to an RDS database?,Require SSL in RDS parameter group and use security groups to restrict non-encrypted connections.
+How can you enforce least privilege access in AWS?,"Use IAM policies that grant only necessary permissions, avoid wildcard actions/resources, and periodically review permissions with IAM Access Analyzer or Access Advisor."
+How can you enforce separation of duties in AWS IAM?,"Use role-based access, ensure users have permissions based on job roles, and avoid combining sensitive duties like administration and auditing in one role."
+How can you enforce TLS for API calls to Amazon S3?,Use bucket policies that deny access unless the request uses `aws:SecureTransport` set to true.
+How can you enhance security between CloudFront and WAF?,Create a filter for the x-origin-verify header and put a psk in the header that CF sends to AWS WAF.
+How can you ensure that authorization headers work properly with CloudFront?,Using Cache policy to forward the unmodified header between CloudFront and the server.
+How can you isolate workloads with VPC design?,"Use public and private subnets, separate VPCs for sensitive workloads, and restrict traffic with security groups, NACLs, and route tables."
+How can you make an API gateway accessible between VPCs in the same region?,Configure a VPC interface endpoint in the source account to send traffic to API GW (destination)
+How can you overcome the CloudFormation 500 resource limit?,Nested Stacks
+How can you prevent unauthorized public access to S3 buckets?,"Use S3 Block Public Access, enforce bucket policies, enable Object Ownership, and audit with AWS Config or Access Analyzer."
+How can you provision SSL certificates in CloudFront?,Attach a certificate from ACM to a cloudfront distribution.
+How can you restrict access at the edge using AWS services?,"Apply geographic restrictions in CloudFront, use WAF rules to rate-limit or block IPs, and use security groups and ACLs with load balancers."
+How can you securely connect on-premises networks to AWS?,"Use AWS Site-to-Site VPN (IPSec), AWS Direct Connect with VPN for encryption, and private/public VIFs for routing."
+How do S3 Object Lock and Glacier Vault Lock enforce data retention?,They create immutable objects or vaults that prevent deletion or modification for a defined retention period.
+How do you apply host-based security in EC2?,"Install host-based firewalls (e.g., iptables), perform OS hardening, use intrusion detection agents, and regularly audit logs."
+How do you assign permissions to a CFM stack to allow it to perform its task?,Stack roles
+How do you audit who accessed a DynamoDB table?,AWS CloudTrail logging for DynamoDB data events
+How do you automatically quarantine an EC2 instance from a GuardDuty finding?,"GuardDuty + EventBridge + Lambda or Systems Manager Automation to isolate the instance (e.g., move to quarantine security group or subnet)"
+How do you block certain IPs from accessing your NAT GW?,Using a NACL.
+How do you check a publicly accessible S3 bucket for sensitive data exposure?,Use Amazon Macie to scan the bucket for sensitive data and identify public access exposure.
+How do you enforce backup retention across multiple AWS services?,"Use AWS Backup to define centralized backup plans and retention schedules across services like EFS, EC2, RDS, DynamoDB."
+How do you enforce TLS for all API access to an S3 bucket?,Use a bucket policy with aws:SecureTransport condition to deny requests that are not over HTTPS.
+How do you fix access issues for logging in AWS?,"Ensure proper IAM permissions, S3 bucket policies, KMS key access, and check for service-linked roles being present and active."
+How do you identify and troubleshoot authorization failures in AWS?,"Use IAM Policy Simulator, CloudTrail logs, check for missing permissions or conflicting Deny statements, and verify role/session assumptions."
+How do you isolate a compromised EC2 instance?,"Use security group changes to block traffic, move instance to isolated subnet, or use Systems Manager automation to isolate and investigate."
+How do you keep traffic off the public internet in AWS?,"Use VPC endpoints, NAT gateways, Transit Gateway, and deploy Lambda functions inside VPCs."
+How do you make compromised IAM user credentials revocable immediately?,"Use IAM to deactivate or delete the access keys, or rotate them using IAM access key rotation. Use CloudTrail and GuardDuty to identify misuse. Prefer temporary credentials from STS over long-term credentials."
+How do you prevent a Lambda function from retrieving secret credentials in plain text?,Store secrets in AWS Secrets Manager or Systems Manager Parameter Store and use environment variables with encryption enabled.
+How do you restrict access to API gateway?,Resource policy
+How do you search logs for security event validation?,Store logs in S3 and use Amazon Athena to run ad-hoc SQL queries on the data.
+How do you troubleshoot a custom application not reporting its statistics?,"Check CloudWatch agent configuration, IAM permissions, application-level logging, and ensure data is being published to the correct namespace."
+How do you troubleshoot missing or blocked network traffic?,"Check security groups, NACLs, route tables, and use VPC Flow Logs or Traffic Mirroring to inspect traffic flow."
+How do you truly delete an S3 object if versioning is enabled?,Delete it by specifying the ID of the object.
+How does Amazon inspector collect information about EC2 instances?,Using AWS SSM agent
+How does Athena federated queries access data that is not in S3?,Data source connectors that run on AWS lambda
+How does AWS Secrets Manager help with credential rotation?,"It automatically rotates secrets (like DB credentials or API keys) according to schedules, using Lambda functions and integrated support for RDS."
+How does AWS Service Catalog help with governance?,It allows centralized deployment of pre-approved products (CloudFormation stacks) to enforce standards and limit user choices.
+How does AWS support secure remote access to instances without opening SSH or RDP ports?,"By using AWS Systems Manager Session Manager, which allows secure shell access without exposing the instance to the public internet."
+How does EC2 Instance Connect differ from SSH?,EC2 Instance Connect allows secure browser-based access to Linux instances without managing SSH keys or opening port 22.
+How does EC2 Instance Connect work?,An instance connect agent is contacted by AWS and the agent copies a temporary public SSH key to ~/.ssh/authorized_keys.
+How does IAM Access Analyzer help with access control?,It identifies resources that are shared with external principals and helps validate least-privilege access configurations.
+How does S3 Lifecycle help manage data retention?,"It automatically transitions objects between storage classes (e.g., S3 Standard to Glacier) or deletes them based on policies."
+How does SSM parameter store perform encryption?,KMS
+How is the effective permission determined when an SCP and an IAM policy both apply?,The INTERSECTION: an action is allowed only if BOTH the SCP and the IAM policy allow it.
+How long can it take for cloudwatch logs to become available after being exported to S3?,12 hours
+How many connections can you have at once with an EC2 serial console?,1
+How many IGWs can you have per VPC?,1
+How many NACLs can you have per subnet?,1
+How many resources are allowed in a CF stack?,500
+How many route tables can a subnet be associated with?,1
+How much throughput can you have per site to site VPN connection?,1.25 Gbps
+How should log lifecycle be managed in AWS?,Use S3 lifecycle policies to transition or delete logs after defined periods. Enable S3 Object Lock for immutability. Use CloudWatch retention settings for log groups.
+How should secrets be passed securely to compute workloads?,Use AWS Secrets Manager or AWS Systems Manager Parameter Store with IAM policies to restrict access.
+How to regain access to a linux EC2 with EBS volume swap (6 steps),1. Create a new key pair 2. Stop the original EC2 3. Detach EBS root volume 4. Attach EBS volume to a temp EC2 as a second volume 5. Edit ~/ssh/authorized_keys 6. Reattach volume
+Identity-based vs resource-based policy: difference?,"Identity-based attaches to a user/role (what THIS identity can do). Resource-based attaches to the resource (who can access THIS resource), e.g. an S3 bucket policy."
+"If S3 versioning is enabled, what happens when you delete an object",It is marked for deletion and it is hidden. It is not actually deleted.
+"If you need multicast between your VPCs, what service should you use?",Transit gateway
+"If you want to stress test your infrastructure for a DDOS, who can you go to?",An AWS test partner.
+"If you wanted to troubleshoot boot issues with an EC2 instance, how would you connect?",EC2 Serial console
+Inspector vs GuardDuty: what's the distinction?,Inspector = vulnerability/CVE + network-reachability assessment of workloads. GuardDuty = runtime threat detection from logs/traffic.
+IR order of operations for a compromised credential?,Contain (disable/revoke the credential and sessions) -> rotate the secret -> investigate via CloudTrail -> remediate root cause.
+Is a NACL stateless or stateful?,Stateless
+Is a NATGW resilient across regions?,No it is available per AZ.
+Is a security misconfiguration with an S3 bucket a policy finding or sensitive data finding with Macie?,Policy
+Is AWS IAM credentials report or AWS config remediations superior?,AWS config remediations because it is automated.
+Is CloudTrail enabled by default?,Yes it is.
+Is financial data a policy finding or sensitive data finding with Macie?,Sensitive data finding
+Is split tunnel enabled by default on ClientVPN?,"No, but it can be enabled for more optimal pathing."
+KMS vs CloudHSM: when each?,"KMS = managed, multi-tenant key management (most cases). CloudHSM = dedicated single-tenant hardware for strict compliance or custom needs."
+Macie vs GuardDuty: what's the distinction?,Macie = discovers and classifies sensitive data (PII) in S3. GuardDuty = detects threats/anomalous activity.
+Name some AWS services used to isolate compromised resources.,"VPC Security Groups, Network ACLs, IAM policies, AWS Systems Manager (to quarantine EC2), AWS Firewall Manager."
+SCP vs RCP: what's the difference?,"SCP limits what PRINCIPALS (identities) in accounts can do; RCP limits what can be done TO RESOURCES, regardless of who's asking."
+Secrets Manager vs Parameter Store: when each?,"Secrets Manager = secrets with built-in rotation (costs per secret). Parameter Store = config + secrets, free tier, no native rotation. Use Secrets Manager when you need rotation."
+Security Group vs Network ACL: stateful or stateless?,"Security Group = stateful (return traffic auto-allowed), operates at the instance/ENI. NACL = stateless (must allow both directions), operates at the subnet."
+SSE-S3 vs SSE-KMS vs SSE-C: who controls the key?,"SSE-S3 = AWS-managed keys. SSE-KMS = KMS keys (auditable, you control policy/rotation). SSE-C = customer-provided keys (you supply the key per request)."
+True/False: You can expose any AWS service through API gateway,True
+WAF vs Shield vs Network Firewall: which for what?,"WAF = L7 web request rules (SQLi, XSS). Shield = DDoS protection. Network Firewall = stateful traffic filtering inside a VPC."
+What 2 main things does IAM access analyzer do?,1. Find resources that are exposed outside of the zone of trust. 2. Help you identify vulnerabilities in IAM policies and generate more secure ones.
+What 2 things does inspector look for in lambda functions?,1. Vulnerable libraries/packages 2. The functions themselves as they are deployed.
+What 4 locations can WAF be deployed at?,1. ALB 2. API Gateway 3. CloudFront 4. AppSync
+What are 4 ways you can improve performance with Amazon Athena?,1. Use columnar data 2. Compress data 3. Partition data sets 4. Use larger files
+What are AWS Certificate Manager (ACM) certificates and when are they used?,"ACM issues and renews publicly trusted certificates, imports third-party certificates, and issues private certificates through AWS Private CA, for TLS across AWS services."
+What are AWS Config rules and their role in governance?,AWS Config rules evaluate resource configurations for compliance with organizational policies and standards.
+What are AWS Control Tower's key benefits?,"Automates multi-account setup with blueprints, sets up landing zones, integrates guardrails via SCPs and AWS Config, and simplifies compliance and governance."
+What are AWS Nitro Enclaves?,"Isolated, hardened EC2 compute environments with no persistent storage, interactive access, or external networking, used to process highly sensitive data such as tokenizing card or health data."
+What are best practices for securing EC2 workloads?,"Use hardened AMIs, apply patches regularly, scan with Amazon Inspector, use IAM instance roles, and secure data using encrypted EBS volumes."
+What are CloudTrail data events?,High volume events that show resource-level activity
+What are CloudTrail digest files?,Logs that reference the log files for the last hour and keeps a hash of each
+What are CloudTrail insights events?,CloudTrail Insights detects unusual API activity patterns in management events and records them as Insights events.
+What are cloudtrail logs for?,"Cloudtrail logs are used to record actions taken by users, roles, or other services with an AWS account."
+What are cloudtrail management events?,Operations performed on resources in your aws account.
+What are Cloudwatch logs used for?,"Capturing and storing log data from apps, services, and AWS resources. Think application, service logs."
+What are common threats addressed by edge services?,"DDoS attacks, injection attacks, XSS, path traversal, brute force attacks, and the OWASP Top 10 vulnerabilities."
+What are composite cloudwatch alarms?,An alarm that monitors the status of other alarms.
+What are declarative policies in AWS Organizations?,Centrally enforce a desired configuration state for a service across accounts (e.g. block disabling of a security feature) that persists even as the service evolves.
+What are EventBridge event busses?,Amazon EventBridge uses event buses to route events from multiple sources to multiple destinations.
+What are HTTP security headers?,"Response headers that tell the browser how to handle content, such as Strict-Transport-Security, Content-Security-Policy, and X-Frame-Options."
+What are important attributes of logs to consider?,"Log level (INFO, WARN, ERROR), verbosity, data type, retention period, storage format, and destination."
+What are Macie Data identifiers?,A pattern matching rule to detect sensitive data in your AWS environment
+What are prefix lists?,Groups of CIDRs you can use to match large numbers of subnets
+What are root account best practices in AWS?,"Enable MFA, use only for essential tasks, don't create access keys, and monitor with CloudTrail."
+What are S3 event notifications?,"S3 event notifications are a way for Amazon S3 to automatically alert other AWS services when certain actions happen to your objects (like uploads, deletes, etc.)."
+What are Service Control Policies (SCPs) used for?,"SCPs define guardrails for what actions accounts in an AWS Organization can perform. They don't grant permissions, only restrict them."
+What are Shield advanced CloudWatch Metrics for?,Detecting if a DDoS is happening
+What are signed cookies?,A cookie that grants access to a resource for a ephemeral time period
+What are signs of anomalies in logs?,"Repeated access denied errors, unusual IP addresses, spikes in usage, root account activity, or unexpected changes in service configurations."
+What are some example State Manager Associations you can make?,"Mandatory AV/EDR installation, closing ports."
+What are the 4 recommended settings for S3 hardening,1. Block public access 2. Enforce strong bucket policies and user policies 3. Use VPC endpoints for S3 and limit access to just one VPC 4. Use S3 presigned URLs
+What are the 5 rule actions for WAF?,1. Count 2. Allow 3. Block 4. CAPTCHA (user interaction) 5. Challenge (only client interaction)
+What are the differences between long-term and temporary credentials in AWS?,Long-term credentials include IAM user passwords and access keys; temporary credentials are issued via AWS STS and have a limited lifespan (seconds to hours).
+What are the four kinds of CloudTrail events?,1. Management Events 2. Data events 3. Cloudtrail insights events 4. Network activity events
+What are the four ways that you can expose your VPC's services to other VPCs?,1. Make it public 2. VPC Peering 3. AWS Private Link 4. Transit Gateway
+What are the log expiration policies you can set for CloudWatch logs?,1 day - 10 years or never.
+What are the main types of IAM policies in AWS?,"Managed policies (AWS or customer), inline policies, identity-based policies (attached to users, groups, roles), and resource-based policies (attached to resources)."
+What are the requirements for EC2 serial console,1. Nitro based EC2 instance 2. Serial console is enabled on the account level (disabled by default)
+What are the three CloudWatch alarm states?,1. OK 2. Insufficient data 3. Alarm
+What are the three main types of encryption for data at rest in AWS?,"Server-side encryption (SSE), client-side encryption, and application-level encryption."
+What are the two kinds of Macie data identifiers?,1. Managed 2. Custom
+What are the two kinds of Macie findings?,1. Policy findings 2. Sensitive data findings
+What are the two VPC endpoints for code deploy?,1. API 2. Agent
+What are three things you can trigger with AWS event bridge?,1. Cron jobs 2. Event pattern (react to a service doing something) 3. Trigger lambda
+What are three ways you can restrict access to CloudFront resources?,1. Geo location 2. Signed URLs 3. Signed Cookies
+What are VPC Endpoint Policies?,Resource based policies for VPC endpoints.
+What are VPC Endpoints Interfaces used for?,Provides an interface within your VPC that allows you to connect to AWS service. Uses PrivateLink.
+What are VPC Endpoints?,An ENI in your VPC that connects you to AWS services.
+What are VPC Flow Logs?,"Capture metadata about IP traffic to/from network interfaces in a VPC. Used to investigate traffic, detect anomalies, and troubleshoot connectivity."
+What are ways to ensure integrity of data at rest in AWS?,"Use hashing algorithms (e.g., SHA-256), digital signatures, S3 Object Lock, Glacier Vault Lock, and KMS key policies."
+What are ways to preserve forensic artifacts in AWS?,"Use S3 Object Lock (WORM), isolated forensic accounts, S3 Lifecycle policies, and cross-region S3 replication."
+What are ways to troubleshoot AWS authentication issues?,"Use CloudTrail logs, IAM Access Advisor (to view permissions), IAM Policy Simulator, and verify role/session assumptions using AWS CLI or console."
+What area does the AD connector fall short of MS AD in AWS?,High availability
+What area is AWS SAML federation still useful?,"Temporary, programmatic access"
+What authentication mechanism is recommended for enterprise SSO in AWS?,"Use IAM Identity Center (formerly AWS SSO) integrated with external IdPs such as Azure AD, Okta, or on-prem Active Directory."
+What AWS features provide network telemetry?,"VPC Flow Logs, Traffic Mirroring, Network Firewall logs, Load Balancer logs."
+What AWS permission policy is needed to allow SSM to manage an EC2 instance?,AmazonSSMManagedInstanceCore
+What AWS service allows you to manage encryption keys?,"AWS Key Management Service (KMS) enables key generation, rotation, auditing, and usage policies."
+What AWS service can be used to connect AWS to your on-prem AD?,AD connector
+What AWS service can enforce guardrails like 'disallow creation of public S3 buckets' across all accounts?,Service Control Policies (SCPs) via AWS Organizations
+What AWS service can you use to centralize your VPC traffic monitoring,Use a transit gateway to route traffic to set up a hub and spoke with the security VPC as the hub.
+What AWS service provides drift detection in infrastructure deployments?,AWS CloudFormation
+What AWS services are used to control traffic in a VPC?,"Security groups (instance-level), network ACLs (subnet-level), AWS Network Firewall (stateful inspection), and VPC route tables."
+What AWS services can automate incident remediation?,"AWS Lambda, AWS Step Functions, EventBridge, AWS Systems Manager, AWS Config, and Security Hub."
+What AWS services can be used to manage identities and authentication?,"IAM (users, groups, roles), IAM Identity Center (SSO), Amazon Cognito (user pools and federated identities), and third-party IdPs via federation (SAML, OIDC)."
+What AWS services require encryption in transit and support TLS?,"Amazon S3, Amazon RDS, DynamoDB, EFS, API Gateway, CloudFront, Redshift, Load Balancers, etc."
+What AWS services support automatic lifecycle management?,"Amazon S3, EBS snapshots, RDS snapshots, CloudWatch logs, and container images using Amazon Data Lifecycle Manager."
+What can be connected to a transit gateway? (three things),1. VPC 2. Direct Connect Gateway 3. Customer Gateway/site to site VPN
+What can cause missing logs in AWS?,"Misconfigured permissions, disabled logging services, incorrect log destinations (e.g., wrong S3 bucket or region), or lack of data generation."
+What can cause monitoring failures in AWS services like Security Hub?,"Common issues include missing permissions, disabled integrations, misconfigured EventBridge rules, or lack of findings due to insufficient data sources."
+What can you place on an S3 object to prevent deletion until it is removed?,Legal hold
+What causes unintended access in IAM and how can it be resolved?,"Unintended access can be caused by overly permissive policies, inherited permissions, or trust relationships. Use IAM Access Analyzer and policy simulation to detect and correct it."
+What combination of services can be used to respond to ANY type of API call in your account?,CloudTrail and Event Bridge
+What data sources does Amazon Detective automatically process data from?,1. VPC flow logs 2. Cloud Trail 3. Guard Duty
+What direction does CloudFront field level encryption work in?,Sending data from the user to the server.
+"What do ""Not Actions"" do in IAM policies?",Provide access to all actions in he service except for actions specifically mentioned
+What do AWS config rules do?,Help you evaluate if AWS configs comply with best practices
+What do CloudFormation intrinsic functions allow you to do?,Assign values to resources in your template using logic. ie Fn::Join
+What do Parameter Policies do?,Allow you to set an expiration date on creds to force them to be updated or deleted.
+What do resource groups allow you to do?,Resource groups allow you to group instances and automate tasks on them at once.
+What do signed URLs do?,A URL signed by CloudFront that grants access to content for an ephemeral time.
+What do VPC endpoint gateways do?,VPC endpoints for S3 and DynamoDB that use route tables.
+What do VPC endpoints do?,Allow you to connect to AWS services within your private network instead of a public network
+What do write-only management events capture in CloudTrail?,"API operations that modify or might modify resources, such as RunInstances and TerminateInstances."
+What do you need on the customer VPC side with VPC peering,ENI or GWLB
+What do you need on the Service VPC side with VPC peering?,NLB
+"What does ""minimize blast radius"" mean in incident prep?","Limit how far a compromise can spread: least privilege, account/network segmentation, scoped roles, isolation playbooks ready in advance."
+What does a CloudWatch subscription filter do?,Allows you to filter logs from a CloudWatch logs subscription as they are being delivered.
+What does a log subscription do?,Real time stream of logs from CloudWatch.
+What does a Virtual Private gateway do?,It is the AWS side of the VPN connection or AWS direct connection
+What does Amazon Detective do?,Provides analytics data to identify suspicious activity in AWS system architecture
+What does Amazon Event Bridge schema registry do?,Stores schemas for AWS
+What does Amazon Macie do?,"Discovers and classifies sensitive data, such as PII, stored in S3, using managed and custom data identifiers."
+What does an Amazon Cognito identity pool do?,"Exchanges an authenticated token, or guest status, for temporary AWS credentials."
+What does API GW do?,Create and manage an API at scale
+What does AWS artifact do?,Gives compliance reports and tracks status of compliance
+What does aws config do?,Stores a configuration history of your AWS account.
+What does AWS Firewall Manager do?,Manages all FW rules in all accounts of an AWS organization
+What does AWS PrivateLink do?,"AWS PrivateLink enables secure, private connectivity between your VPC and AWS services, third-party SaaS applications, or other VPCs; without exposing traffic to the public internet ."
+What does AWS Shield advanced protect?,"Everything that Shield standard does, and L7 resources too."
+What does AWS Shield do?,"Protect from floods, reflections, and other ddos attacks."
+What does AWS Shield standard protect against?,Common L3 and L4 layer attacks.
+What does AWS State manager do?,Automate the process of keeping instances in a state you defined
+What does CGW stand for?,Customer Gateway
+What does cloudwatch contributor insights do?,Analyze the amount of noise each log source generates.
+What does CloudWatch insights allow you to do?,Write queries to filter through CloudWatch logs.
+What does EventBridge Schema discovery do?,Listens for events sent to event bridge and analyzes their structure to generate a schema
+What does IMDS stand for?,Instance Meta Data Service
+What does KMS GenerateDataKeyWithoutPlaintext return?,"Only an encrypted data key, never a plaintext copy; used to provision keys for later decryption without exposing plaintext at creation."
+What does Lambda @edge do?,"Lambda functions that modify traffic between viewer and edge location, and edge location and origin."
+What does OAC do?,Restrict access to content stored in S3 using signed authorization headers.
+What does OAC stand for?,Origin Access Control
+What does SNI stand for?,Server Name Indication
+What does SSM Inventory allow you to do?,"Collect metadata from managed instances such as software, OS driver, configs, updates, services, etc."
+What does SSM Parameter store do?,Secure storage for configurations and secrets
+What does SSM Run Command allow you to do?,Run scripts/commands on systems and save the output to S3/CloudWatch.
+What does Stratus Red Team do?,Simulates AWS attack techniques (TTPs) so you can verify your detection (e.g. GuardDuty) actually fires. Useful for proving detection works.
+What does STS do?,Generates temporary credentials
+What does STS stand for?,Security Token Service
+What does the procstat Cloudwatch agent plugin do?,Collects metrics about individual processes running on your systems.
+What does the SNI do?,Allows multiple sites to share one IP address.
+What does the Unified Cloudwatch Agent do?,"Collect system metrics such as RAM, CPU, Storage, etc. and sends it to cloudwatch"
+What does the VPC network access analyzer do?,Helps you understand potential network paths to/from your resources
+What does VGW stand for,Virtual private gateway
+What does VPC traffic mirroring do?,Basically SPAN for AWS
+What feature of Amazon Inspector can be used to identify open ports and assess network reachability?,Inspector Network Reachability
+What feature of IAM can be used to ensure different users in the same role have different access based on attributes like department?,Attribute-Based Access Control (ABAC)
+What field do you view to determine the actions performed by your security groups in a VPC flow log?,The action field
+What happens to an EBS volume when it is provisioned to a new customer?,"The storage is sanitized first, so the new customer cannot see any prior data."
+What happens to EBS volumes when they are deleted?,The storage is placed in an unallocated aws pool of storage. The data remains on them.
+What happens to the presigned URL when your temporary credentials with the IAM role expire?,The presigned URL stops working
+What IAM key can you use to restrict access to a resource to just the organization?,aws:PrincipalOrgId
+What IAM security tool would you use to show the service permissions granted to and when they were last accessed?,IAM access advisor
+What interface device can be used to enable traffic between on prem and AWS services,Virtual Interface
+What IP address is the VPC router located at?,VPC network+1
+What IP is the network+3 address used for in a VPC?,Reserved
+What IP is used in each VPC for DNS?,Network+2
+What is a bastion host?,"Basically a hardened, internet facing jumpbox"
+What is a best practice for centralizing AWS logs?,"Send all service logs to a central S3 bucket, using CloudTrail, VPC Flow Logs, CloudWatch Log subscriptions, and configure centralized access controls."
+What is a cache miss?,When the CloudFront Edge location does not have the requested resource
+What is a CloudFront behavior?,A configuration rule that determines how CloudFront Routes URL patterns
+What is a CloudWatch alarms period?,Period is the length of time to use to evaluate the metric or expression to create each individual data point for an alarm.
+What is a CloudWatch log group?,An arbitrary name to group the logs. Usually by application.
+What is a CloudWatch Log stream?,A CloudWatch log stream is a sequence of log events that share the same source
+What is a common issue with CloudTrail logs not appearing in S3?,"Missing S3 bucket permissions, trail not enabled for all regions, or misconfigured KMS key access."
+What is a delegated administrator account?,"A member account granted admin rights for a specific security service (e.g. GuardDuty, Security Hub) so security isn't run from the management account."
+What is a free form way you can use to describe your EC2 instances?,Tags
+What is a hardened AMI and how is it created?,"An AMI that is configured for security best practices (e.g., disabled unused services, patched OS). Created using EC2 Image Builder or manual hardening steps."
+What is a Kubernetes NetworkPolicy (security relevance)?,"Controls which pods can talk to which, enabling microsegmentation inside the cluster (Zero Trust east-west traffic control)."
+What is a layered defense strategy for edge services in AWS?,"Combine Amazon CloudFront (CDN), AWS WAF (request filtering), Shield (DDoS protection), and load balancers to create multiple layers of protection at the edge."
+What is a NAT instance?,An EC2 instance running NAT software. Limited by instance size
+What is a network access scope (Network Access Analyzer)?,Json data that contains conditions to define your network security policy
+What is a patch baseline?,Defines what patches should be installed on your instances
+What is a permission boundary in IAM?,"An advanced policy that caps the MAXIMUM permissions an IAM entity can have, even if its identity policies grant more. Used to safely delegate role creation."
+What is a presigned URL?,A URL that gives someone the same permissions as the user that granted the URL.
+What is a risk of using IAM inline policies extensively?,"Inline policies are tightly coupled to users/resources and harder to audit and reuse, increasing risk of privilege creep."
+What is a session policy in AWS and how is it used?,A session policy is an optional inline policy passed when assuming a role or federating via STS. It further limits permissions during the session.
+What is a site to site VPN used for in AWS?,Connecting on prem resources to your AWS resources.
+What is a state manager association?,A configuration you assign to EC2 instances to maintain a specific state.
+What is Amazon Athena?,A serverless query service to analyze data in S3
+What is Amazon CloudWatch Logs?,"Centralizes logs from EC2, CloudTrail, Route 53, applications, and other sources into one searchable service, with per-group retention, Logs Insights queries, metric filters, sensitive data masking, and two log classes, Standard and Infrequent Access."
+What is Amazon Inspector?,"A vulnerability management service that continually scans EC2 instances, ECR container images, and Lambda functions for software vulnerabilities and unintended network exposure, and reports each issue as a finding."
+What is Amazon Security Lake?,"A managed service that centralizes security data from AWS and third parties into a data lake, normalized to the OCSF schema."
+What is an AI service opt-out policy in AWS Organizations?,An Organizations policy that opts all accounts out of AWS using your content for AI service improvement.
+What is an Amazon Cognito user pool?,"A user directory handling sign-up and sign-in for web and mobile apps; user pools authenticate, identity pools authorize to AWS."
+What is an Athena Federated query?,"Allows you to run SQL across data stored in relational, non-relational, object and custom data sources."
+What is an Egress only IGW used for?,Keeps your IPv6 devices private and unreachable inbound
+What is an instance store?,A separate drive that comes with some instances.
+What is an Origin Access Identity?,Restricts access to S3 buckets so only CloudFront can reach them.
+What is an RCP (Resource Control Policy)?,"An Organizations policy that sets maximum permissions on RESOURCES across accounts (e.g. enforce that all S3 buckets require encryption), complementing SCPs which act on principals."
+What is an S3 access point?,A Network endpoint that attaches to one S3 bucket. It also restricts access to the bucket.
+What is an S3 object lock?,Prevents an S3 object from being deleted or overwritten
+What is an SCP (Service Control Policy) and what can it do?,"An AWS Organizations policy that sets the MAXIMUM permissions for accounts. It can only restrict, never grant."
+What is an SSM document?,A YAML/JSON file that defines parameters and actions System Manager will perform on your instances
+What is an SSM Patch Group?,Associates sets of instances with a patch baseline
+What is AWS Audit Manager used for?,"Audit Manager collects evidence and automates assessments for compliance frameworks like PCI-DSS, HIPAA, and ISO 27001."
+What is AWS ClientVPN?,An AWS managed implementation of OpenVPN
+What is AWS cognito for?,Provides end user authentication and authorization.
+What is AWS Control Tower?,"Sets up and governs a secure multi-account AWS environment with pre-built guardrails, a landing zone, and an account factory. Built on Organizations + Config."
+"What is AWS Cost Anomaly Detection, and why does security care?","Alerts on abnormal spending spikes, which can be the first sign of compromised credentials mining or exfiltrating."
+What is AWS Direct connect?,Allows you to directly connect your resources to AWS without going through the internet.
+What is AWS Fault Injection Service used for?,Runs controlled chaos/fault experiments to validate resilience and incident-response plans.
+What is AWS IAM Identity Center (formerly AWS SSO)?,Centralized workforce identity + SSO across multiple AWS accounts and apps; issues short-lived credentials instead of long-term keys. The modern replacement for IAM users for human access.
+What is AWS IoT Device Defender?,"Audits IoT device configurations, monitors connected devices for abnormal behavior, and helps mitigate device security risks."
+What is AWS Network Firewall?,"A managed stateful network firewall for VPCs with Suricata-compatible rules, filtering traffic between subnets, the internet, and on premises."
+What is AWS RAM (Resource Access Manager) used for?,"It enables secure sharing of AWS resources (e.g., subnets, transit gateways) across accounts and organizations without duplication."
+What is AWS route propagation?,Allows your VPC route tables to automatically receive routes for your on-premises network
+What is AWS SES?,Simple Email Service
+What is AWS Verified Access?,"Provides secure access to applications without a VPN, evaluating identity + device trust on every request. A named AWS Zero Trust service."
+"What is CloudTrail event history, and how far back does it go?","A viewable, searchable record of the last 90 days of management events with no setup required; a trail delivering to S3 is what keeps logs longer."
+What is CloudTrail log file validation?,"An integrity feature: CloudTrail writes signed digest files referencing each log file's hash, so tampering with or deleting logs can be proven."
+What is CloudWatch Logs Insights used for?,"It allows interactive queries on CloudWatch Logs using a query language to detect patterns, anomalies, and operational issues."
+What is cross-account AssumeRole?,"A principal in one account assumes a role in another to get temporary credentials, instead of sharing long-term keys across accounts."
+What is delegated administrator access in AWS Organizations?,"It allows designated accounts to manage specific AWS services (e.g., Security Hub, Config) across the organization without requiring root access."
+What is envelope encryption?,Data is encrypted with a data key; the data key is itself encrypted by a KMS key (CMK). Stored together; only the encrypted data key leaves KMS.
+What is IAM database authentication for RDS?,Connecting to the database with a short-lived authentication token generated by RDS instead of a password.
+What is IRSA (IAM Roles for Service Accounts) in EKS?,"Maps a Kubernetes service account to an IAM role so pods get scoped, temporary AWS credentials instead of node-wide or static keys."
+What is MFA Delete used for in S3,Forces the user to perform MFA before deleting something
+What is OCSF (Open Cybersecurity Schema Framework)?,An open standard for normalizing security log/event data so tools can interoperate. Security Lake stores data in OCSF.
+What is Route53 DNS query logging?,Logs public queries the Route 53 resolver recognizes.
+What is S3 Glacier Vault Lock?,"A lockable vault policy enforcing WORM retention on a Glacier vault; once locked, the policy cannot be changed or removed."
+What is Skill 3.2.7 (GenAI guardrails) about in SCS-C03?,"Implementing protections and guardrails for generative AI applications (input/output filtering, access control, abuse prevention). New focus area in C03."
+What is SSE-KMS?,Encrypts objects in S3 using KMS
+What is SSM Data Sync used for?,Synchronizing inventory data from multiple AWS regions to a single S3 bucket to allow for centralized management
+What is SSM Patch Manager used for?,Keeping systems updated using automation
+What is template hardening in AWS CloudFormation?,"It involves validating templates, enforcing parameter constraints, avoiding hardcoded values, and using IAM least privilege."
+What is the AWS Security Finding Format (ASFF)?,"ASFF is a standard JSON format for AWS security findings, allowing integration between AWS and third-party tools. Used by services like GuardDuty and Security Hub."
+What is the AWS Security Incident Response Guide?,An AWS whitepaper that outlines a framework and best practices for responding to cloud security incidents using AWS tools and services.
+What is the AWS shared responsibility model in one line?,"AWS secures the cloud (infrastructure); the customer secures what's IN the cloud (configuration, data, access, patching)."
+What is the AWS Well-Architected Tool and how does it help?,"It evaluates workloads against AWS best practices across 6 pillars including security and cost optimization, identifying gaps and offering remediation steps."
+What is the benefit of using AWS CloudFormation for deployments?,"CloudFormation enables consistent, repeatable, and secure deployment of infrastructure as code, with drift detection and change management."
+What is the benefit of using OAC and SSE-KMS,You can specify that CloudFront is the only one able to decrypt the S3 bucket content by giving CloudFront explicit permissions to decrypt.
+What is the best place to look if something is deleted in AWS?,Cloudtrail
+What is the CGW?,It is the customer side of the VPN connection
+What is the default behavior for patch baselines?,Only critical and security patches are installed
+What is the default namespace for logs collected by the Unified Cloudwatch Agent?,CWAgent
+What is the difference between ABAC and RBAC in AWS?,ABAC (Attribute-Based Access Control) grants access based on tags/attributes; RBAC (Role-Based Access Control) assigns access based on roles linked to job functions.
+What is the difference between management events and data events in CloudTrail?,"Management events are control plane (CreateBucket, Delete Bucket) Data events are data plane (GetObject, PutObject)"
+What is the difference between Secrets Manager and Parameter Store?,"Secrets Manager is purpose-built for secret management and rotation; Parameter Store is for configuration data, secrets, and integration with Systems Manager."
+What is the difference between SSM Automations and SSM Run Command,SSM Automations is used for high level (orchestration) tasks. SSM Run Command is used for lower level (automation) tasks. Run Command is exclusive to EC2 instances
+What is the difference between symmetric and asymmetric encryption in AWS?,"Symmetric encryption uses one key for encryption/decryption (used by KMS); asymmetric uses a public/private key pair (e.g., for digital signatures)."
+What is the four-part structure of an IAM policy statement?,"Effect (Allow/Deny), Action, Resource, and optional Condition (plus Principal in resource-based policies)."
+What is the purpose of a KMS key policy?,"It defines who can use or manage the KMS key, enabling fine-grained access control over encryption operations."
+What is the purpose of a runbook or playbook in AWS incident response?,"A playbook defines high-level strategy for a class of incidents. A runbook provides detailed, step-by-step instructions for handling specific incidents; both automate response workflows."
+What is the purpose of AWS Organizations?,"AWS Organizations enables centralized account management, consolidated billing, application of Service Control Policies (SCPs), and resource sharing across accounts."
+What is the purpose of resource-based policies?,"They allow you to grant access to a resource (e.g., S3 bucket, Lambda function) from other accounts or services without attaching permissions to IAM identities."
+What is the purpose of TLS in AWS?,"TLS (Transport Layer Security) ensures encryption and integrity of data in transit between clients and services. It's used by AWS services like CloudFront, ELB, API Gateway, and S3."
+What is the recommended method for encrypting EBS volumes?,Use AWS KMS with customer-managed keys (CMKs) and enforce encryption through IAM policies or SCPs.
+What is the S3 Requester Pays feature?,The requester pays request and transfer costs instead of the bucket owner; the owner always pays for storage.
+What is the TTL for DNSSEC records in a R53 hosted zone?,7 days
+What is the URL for IMDS?,http://169.254.169.254/latest/meta-data
+What is tokenization?,"Converting highly sensitive data such as card or health numbers into a non-sensitive token, so systems handle the token instead of the real value."
+What is Traffic Mirroring used for in AWS?,It allows capturing packet-level data from EC2 instances to analyze network traffic and troubleshoot issues.
+What is used to solve the confused deputy problem?,An external ID
+What limit is used to throttle API gateway across all methods and clients?,Stage limits
+What limit is used to throttle API gateway across specific methods?,Method Limit
+What limit is used to throttle per client usage in API gateway?,Usage Plans
+What logs or metrics can indicate edge-based attacks?,"AWS WAF logs, CloudFront access logs, ELB logs, Route 53 query logs, CloudWatch metrics (e.g. 403 spikes, request count anomalies)."
+What needs to be enabled in order to enable MFA Delete?,Versioning
+What needs to be enabled in order to use S3 object lock?,Versioning
+What pentesting activities are forbidden on AWS infrastructure?,"1. DNS zone walking via Amazon route 53 hosted zones 2. DOS/DDOS 3. Port Flooding, protocol flooding, request flooding"
+What problem does AWS Verified Access solve vs a traditional VPN?,"VPN grants broad network access after one auth; Verified Access evaluates each request against identity and device context (never trust, always verify)."
+"What replaced the SCS-C02 ""Threat Detection and Incident Response"" domain in C03?",It split into two separate domains: Detection and Incident Response.
+What report can you use to list all the accounts and users and the statuses of their credentials?,IAM credentials Report
+"What SCP is attached by default to every organization root, OU, and account?","FullAWSAccess, which allows all actions and services; your own SCPs then restrict from that starting point."
+What service can be used to enforce security policies at the network and account level?,"AWS Firewall Manager can apply WAF, Shield Advanced, and security group policies across multiple accounts in an Organization."
+What service can be used to quickly analyze logs with SQL?,Amazon Athena. You must store in S3 first.
+"What service provides near real-time threat detection based on VPC traffic, DNS logs, and AWS CloudTrail?",Amazon GuardDuty
+What services are supported by VPC Endpoint gateway?,S3 and DynamoDB
+What should be used as the default IPv4 route in a subnet?,The NATGW IP.
+What should you define to generate alerts based on system behavior?,"Define relevant metrics and thresholds that represent anomalous or undesired behavior (e.g., IAM policy changes, denied actions, root account usage)."
+What should you evaluate to align logging and monitoring with security requirements?,"Review service configurations, log retention settings, encryption status, completeness of coverage, and alert thresholds."
+What SSM feature is used to create State Manager Associations?,SSM Documents
+What tool allows creation of metric filters and dashboards for threat detection?,Amazon CloudWatch.
+What tool can help simulate and test IAM policies?,"The IAM Policy Simulator, available in the AWS Console and API, allows you to test policies and simulate actions to check if access would be allowed or denied."
+What tool helps analyze reachability in a VPC?,"VPC Reachability Analyzer evaluates whether one resource can reach another in a VPC based on routing, security groups, and NACLs."
+What tools help identify unused or underutilized resources in AWS?,"AWS Trusted Advisor, Cost Explorer, Compute Optimizer, and AWS Config can identify unused instances, volumes, and idle load balancers."
+What tools monitor baselines and detect anomalies in AWS environments?,"Amazon GuardDuty (threat detection), AWS Systems Manager (compliance monitoring), CloudWatch (custom metrics and baselines)."
+What traffic is not captured by VPC flow logs (7 kinds),1. Amazon DNS servers 2. Amazon windows license activation 3. Traffic for 169.254.169.254 4. DHCP 5. Mirrored traffic 6. Traffic to VPC router reserved IP address 7. Traffic between VPC endpoint ENI and network load balancer ENI
+"What type of S3 lock would be used to prevent all users, including the root user from modifying the object until the retention period expires?",Compliance Mode
+What type of S3 lock would be used to prevent allow specific users with special permissions to override the lock?,Governance
+What types of data does the Custom event bus support in amazon EventBridge?,Your apps or apps without a partner event bus
+What types of data does the Default event bus support in amazon EventBridge?,"AWS native services such as EC2, Lambda, S3."
+What types of data does the Partner event bus support in amazon EventBridge?,AWS SaaS partners
+What would you use if you wanted to exclude a specific type of data from Amazon Macie?,Allow lists
+When does Amazon inspector assess container images?,When they are pushed
+When is it better to use Cognito rather than IAM?,Cognito is better for large numbers of external users
+When should you use AWS STS for temporary credentials?,"When you need to grant short-term, limited access (e.g., cross-account access, federated users, or switching roles)."
+Where are NACLs applied?,Between subnets
+Where can WAF logs be sent to?,1. CloudWatch 2. KDF 3. S3
+Where can you send data from logs subscriptions to?,"KDS, KDF, Lambda"
+Where can you send records of SSM session manager sessions?,Cloudwatch and S3
+Where can you store cloudtrail logs?,S3 or Cloudwatch
+Where does Amazon inspector send its findings?,Security Hub
+Where does encryption happen for CloudFront Field level encryption?,"At the edge location, closer to the user."
+Where does the NATGW sit?,In a public subnet. It routes between the public and private subnets.
+"Which AWS service aggregates findings from GuardDuty, Inspector, and Macie?",AWS Security Hub
+Which AWS service enables secure remote access to EC2 instances without needing SSH keys or opening inbound ports?,AWS Systems Manager Session Manager
+Which AWS services can analyze captured logs?,"Amazon Athena (SQL queries on S3 logs), CloudWatch Logs Insights, Security Hub Insights, and CloudTrail Insights."
+Which AWS services can detect security threats automatically?,"Amazon GuardDuty, Amazon Macie, AWS Config, AWS Security Hub, IAM Access Analyzer, Amazon Inspector, AWS Detective."
+Which AWS services can help invalidate and rotate credentials after a compromise?,"AWS Identity and Access Management (IAM), AWS Secrets Manager, and AWS Systems Manager (for automating secret updates)."
+Which AWS services enable secure hybrid connectivity?,"AWS VPN, AWS Direct Connect, AWS VPN over Direct Connect with MACsec encryption."
+Which AWS services offer logging capabilities?,"AWS CloudTrail (API activity), VPC Flow Logs (network traffic), Route 53 DNS Logs, Amazon CloudWatch Logs (application/system logs)."
+Which AWS services protect a workload against DDoS at the edge?,"AWS Shield (Standard or Advanced), AWS WAF, and Amazon CloudFront"
+Which AWS services provide edge protection for web applications?,"AWS WAF (web application firewall), AWS Shield (DDoS protection), Amazon CloudFront (CDN), Elastic Load Balancers, Amazon Route 53 (DNS)."
+Which AWS services provide monitoring and alerting for security events?,"Amazon CloudWatch (metrics and logs), Amazon EventBridge (event routing), AWS Lambda (automated responses), Amazon SNS (notifications), AWS Security Hub (centralized findings)."
+Which AWS services scan EC2 and container workloads for vulnerabilities?,"Amazon Inspector (EC2 and container image scans), Amazon ECR (container scanning), AWS Systems Manager (patch compliance)."
+Which AWS services support encryption at rest by default or optionally?,"Amazon S3, RDS, EBS, EFS, DynamoDB, SQS, Redshift, and Aurora support encryption at rest using AWS KMS."
+Which AWS services support private connectivity between VPCs and services?,"VPC peering, AWS Transit Gateway, VPC endpoints (interface and gateway), AWS PrivateLink."
+Which logs help analyze network problems in AWS?,"Route 53 DNS query logs, AWS WAF logs, VPC Flow Logs, Load Balancer access logs."
+Which services are used for storing secrets securely in AWS?,AWS Secrets Manager and AWS Systems Manager Parameter Store support encrypted storage of secrets and config values.
+Which two AWS services help investigate root cause and attack paths during a security incident?,Amazon Detective and AWS CloudTrail
+Which VPN technologies are commonly used for encrypted communication in AWS?,IPSec VPNs are used in AWS Site-to-Site VPN connections for secure communication between on-premises and AWS.
+Why are instance stores faster than EBS?,They are directly attached hardware. EBS is network based.
+Why are short-lived credentials preferred over IAM user access keys?,"They expire automatically, so a leaked credential is useless within hours. Core Zero Trust practice; reduces blast radius of a compromise."
+Why does OCSF matter for log analysis?,Normalized schema means logs from many sources can be queried and correlated together without custom parsing per source.
+Why is a consistent tagging strategy important?,"Tagging supports cost allocation, automation, access control (ABAC), resource grouping, and security/compliance reporting."
+"Why is the SCS-C03 exam considered ""scenario-based""?","Questions describe a situation and ask which service you'd choose and in what order, not just what a service is. Tests judgment over memorization."

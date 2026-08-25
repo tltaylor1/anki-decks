@@ -13,7 +13,7 @@ Describe MAC filtering.,MAC filtering restricts network access by allowing only 
 Difference between business continuity and disaster recovery?,Business continuity ensures essential services continue; disaster recovery restores systems after disruption.
 Difference between Red Team and Blue Team.,"Red Team simulates attackers, Blue Team defends; Purple Team combines collaboration."
 Difference between stateful and stateless firewalls?,"Stateful firewalls track connection state and context, allowing more complex inspection; stateless firewalls examine packets individually without context."
-Due care vs due diligence; what’s the difference?,Due care is acting responsibly to protect assets; due diligence is the investigation to ensure risk is managed.
+Due care vs due diligence; what's the difference?,Due care is acting responsibly to protect assets; due diligence is the investigation to ensure risk is managed.
 "Explain access control models: DAC, MAC, RBAC.","DAC (Discretionary Access Control) allows data owners to control access. MAC (Mandatory Access Control) enforces strict policies defined by a central authority. RBAC (Role-Based Access Control) assigns permissions to roles, and users are granted access based on their role membership."
 Explain application whitelisting.,Allow only approved software to execute; prevents unauthorized executables.
 Explain BYOD (Bring Your Own Device) security considerations.,"Ensuring personal device security, access control, and data protection while respecting privacy."
@@ -75,7 +75,7 @@ What does 'secure by design' mean?,"Embedding security considerations into archi
 What does secure coding mean?,"Writing software with explicit efforts to guard against common vulnerabilities, including validation and sanitization."
 What is 'Security by Obscurity' and why isn't it enough?,Hiding system details provides little real protection; must be paired with real security measures.
 What is a baseline image in VM deployment?,A pre-hardened VM template with secure configurations to ensure consistency.
-What is a bastion host?,"A hardened single-purpose server placed in a network’s perimeter, acting as the only exposed system to facilitate secure remote access."
+What is a bastion host?,"A hardened single-purpose server placed in a network's perimeter, acting as the only exposed system to facilitate secure remote access."
 What is a buffer overflow and how to mitigate it?,Writing data past buffer size; mitigate using safe language constructs and bounds checking.
 What is a Certificate Authority (CA)?,Trusted entity that issues digital certificates to verify identities.
 What is a Cloud Access Security Broker (CASB)?,A control hub that enforces security policies across cloud services and visibility into cloud usage.
@@ -103,7 +103,7 @@ What is a zero-day vulnerability?,An unknown and unpatched vulnerability exploit
 What is an Acceptable Use Policy (AUP)?,Defines acceptable behavior and limitations for employees using corporate IT assets.
 What is an incident response plan (IRP)?,"A structured playbook detailing how to detect, analyze, respond, and recover from security incidents."
 What is an insider threat program?,"Monitoring for misuse by trusted users; through anomalies in behavior, privilege access, or data exfiltration."
-What is an NDA’s role in cybersecurity?,Protect sensitive data shared with employees or third parties through legal agreements.
+What is an NDA's role in cybersecurity?,Protect sensitive data shared with employees or third parties through legal agreements.
 What is API rate limiting?,Throttle requests to prevent abuse or service overload; implement using rate limit headers or quotas.
 What is ARP poisoning?,An attack where the attacker sends fake ARP messages to associate their MAC with a victim's IP to intercept or manipulate traffic.
 What is Attribute-Based Access Control (ABAC)?,"Access decisions based on attributes like user role, location, and time (contextual)."
@@ -125,8 +125,8 @@ What is debugging risk in production?,Exposes sensitive data and code paths; dis
 What is DNS poisoning?,Manipulating DNS responses to redirect users to malicious sites.
 What is dynamic application security testing (DAST)?,Analyzing a running application to find vulnerabilities.
 What is ephemeral computing?,"Short-lived compute instances that are replaced rather than repaired, which shrinks the attack surface and simplifies recovery."
+What is GDPR's breach notification requirement?,Organizations must notify authorities within 72 hrs of discovering a data breach affecting personal data.
 What is GDPR's main principle?,"The General Data Protection Regulation is centered on protecting EU citizens' personal data, requiring transparency, purpose limitation, data minimization, user consent, and data subject rights."
-What is GDPR’s breach notification requirement?,Organizations must notify authorities within 72 hrs of discovering a data breach affecting personal data.
 What is ICMP tunneling?,Encapsulating data inside ICMP packets to bypass firewall restrictions.
 What is Infrastructure as Code (IaC) and how do you secure it?,"IaC manages infrastructure through declarative code; securing it involves scanning templates, using secure modules, and code reviews."
 What is input fuzzing?,Testing an app with random/malformed inputs to find vulnerabilities.
@@ -137,7 +137,7 @@ What is microsegmentation?,"Fine-grained network segmentation (e.g., VM-to-VM) t
 What is multi-factor authentication (MFA)?,"MFA requires two or more distinct types of credentials, such as something you know (password), something you have (token), and something you are (biometrics); to increase security beyond simple password authentication."
 What is NAT?,"Network Address Translation (NAT) allows multiple devices to share a single public IP, translating between internal and external network addresses."
 What is network access control (NAC)?,"Enforcing compliance checks (e.g., antivirus, patches) before allowing network access."
-What is network segmentation?,Dividing a network into smaller zones to control access and limit attackers’ spread.
+What is network segmentation?,Dividing a network into smaller zones to control access and limit attackers' spread.
 What is NIST SP 800-53?,A catalog of security controls for federal information systems and organizations.
 What is non-repudiation?,"Non-repudiation ensures a party cannot deny the authenticity of their action, typically achieved through digital signatures, logs, and secure audit trails."
 What is OWASP Top 10?,"The top 10 web application vulnerabilities, as identified by the Open Web Application Security Project; used widely as a guide for secure development."
@@ -171,15 +171,15 @@ What is the rule evaluation order in a firewall?,Firewall rules are evaluated to
 What is threat intelligence sharing?,Collaborating on threat data between organizations or sectors to improve collective defense.
 What is threat modeling?,"Threat modeling is a proactive process to identify, prioritize, and analyze potential threats to a system by understanding its architecture, assets, and attack surfaces, and designing appropriate mitigations."
 What regulatory frameworks affect backup/data protection?,"GDPR, HIPAA, SOX, CJIS, and CMMC all influence data retention and protection requirements."
-What’s a DMZ in network security?,"A Demilitarized Zone (DMZ) is a lightly secured subnet that exposes external-facing services (like web servers) to the internet, isolating them from internal systems to reduce risk."
-What’s Azure ARM vs Azure IAM?,ARM: Azure Resource Manager for deploying resources; IAM: Identity and Access Management for permissions.
-What’s input sanitization vs validation?,Sanitization cleans risky characters; validation ensures the data format is correct.
-What’s the difference between active and passive scanning?,"Active scanning sends probes to identify vulnerabilities, while passive scanning observes network traffic without probe impact."
-"What’s the difference between hot, warm, and cold backup?","Hot = live/instant, warm = requires prep, cold = offline/archival with longer recovery time."
-"What’s the difference between threats, vulnerabilities, and exploits?","A threat is anything that can cause harm, a vulnerability is a weakness that can be exploited, and an exploit is the action or tool used by an attacker to leverage that vulnerability."
-What’s the purpose of an IPS vs IDS?,An IDS (Intrusion Detection System) alerts on suspicious activity; an IPS (Intrusion Prevention System) can also block or mitigate detected threats.
-What’s the role of encryption in backup systems?,"It protects data at rest and in transit, ensuring backup confidentiality and compliance."
+What's a DMZ in network security?,"A Demilitarized Zone (DMZ) is a lightly secured subnet that exposes external-facing services (like web servers) to the internet, isolating them from internal systems to reduce risk."
+What's Azure ARM vs Azure IAM?,ARM: Azure Resource Manager for deploying resources; IAM: Identity and Access Management for permissions.
+What's input sanitization vs validation?,Sanitization cleans risky characters; validation ensures the data format is correct.
+What's the difference between active and passive scanning?,"Active scanning sends probes to identify vulnerabilities, while passive scanning observes network traffic without probe impact."
+"What's the difference between hot, warm, and cold backup?","Hot = live/instant, warm = requires prep, cold = offline/archival with longer recovery time."
+"What's the difference between threats, vulnerabilities, and exploits?","A threat is anything that can cause harm, a vulnerability is a weakness that can be exploited, and an exploit is the action or tool used by an attacker to leverage that vulnerability."
+What's the purpose of an IPS vs IDS?,An IDS (Intrusion Detection System) alerts on suspicious activity; an IPS (Intrusion Prevention System) can also block or mitigate detected threats.
+What's the role of encryption in backup systems?,"It protects data at rest and in transit, ensuring backup confidentiality and compliance."
 Why are backups still necessary for SaaS platforms like Microsoft 365?,Because native retention is limited and does not support point-in-time or granular restores. Backups ensure recoverability.
 Why is air-gapping important in backup strategies?,"It isolates backups from the network, protecting them from ransomware and insider threats."
-Why is code signing important?,"Ensures code integrity and that it hasn’t been tampered with, via trusted signatures."
+Why is code signing important?,"Ensures code integrity and that it hasn't been tampered with, via trusted signatures."
 Why leadership matters in security governance?,"They provide direction, resource commitment, and enforcement for security initiatives."
