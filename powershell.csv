@@ -1,0 +1,134 @@
+front,back
+Explain how PowerShell handles memory management.,Relies on .NET garbage collection for managing memory.
+Explain how PowerShell supports cross-platform scripting.,"PowerShell 7 (formerly called PowerShell Core) runs on Windows, Linux, and macOS with consistent commands."
+Explain how PowerShell supports REST APIs.,Using Invoke-RestMethod and Invoke-WebRequest cmdlets.
+Explain how PowerShell uses the .NET framework.,"PowerShell is built on .NET, allowing direct access to .NET classes and libraries."
+Explain the concept of cmdlet binding.,Enables advanced features like parameter validation and pipeline support in functions.
+Explain the difference between Add-Type and using assemblies.,Add-Type compiles code on the fly; loading assemblies imports precompiled libraries.
+How can PowerShell be used to manage Windows permissions?,Use `Get-Acl` and `Set-Acl`.
+How can you automate a PowerShell script to run on a schedule?,"Use Task Scheduler or Register-ScheduledTask on Windows, or Azure Automation in the cloud."
+How can you create custom aliases or functions in your profile?,Edit `$PROFILE` to include `Set-Alias` or functions.
+How can you discover available parameters of a cmdlet?,Use `Get-Command <cmdlet> | Select-Object -ExpandProperty Parameters`.
+How can you handle looping through a list of servers?,Use a `foreach` loop with an array of server names.
+How can you improve script performance?,"Minimize pipeline usage, avoid unnecessary loops, use native cmdlets."
+How can you store and reuse credentials in PowerShell?,Export-CliXml protects SecureStrings with DPAPI on Windows only; on Linux and macOS they are not encrypted. Prefer the SecretManagement and SecretStore modules.
+How do you change the execution policy?,Using Set-ExecutionPolicy cmdlet with appropriate permissions.
+How do you check for `$null` safely?,Use `$null -eq $variable` to avoid errors.
+How do you check for running jobs?,Use Get-Job cmdlet.
+How do you check if a file exists?,Use Test-Path cmdlet.
+How do you check the PowerShell execution policy?,Use Get-ExecutionPolicy cmdlet.
+How do you comment code in PowerShell?,"Single line comments use #, multi-line comments use <# #>."
+How do you convert strings to other data types?,Using type casting or methods like [int]'123'.
+How do you create a remote session?,Using New-PSSession cmdlet.
+How do you create and use modules?,"Modules are reusable packages of functions, cmdlets, and variables, imported via Import-Module."
+How do you create custom objects in PowerShell?,"Use New-Object, PSCustomObject, or .NET classes."
+How do you create GUI applications with PowerShell?,Using Windows Presentation Foundation (WPF) or Windows Forms.
+How do you create reusable tools or scripts across different sessions?,Save as modules and load via profile or Import-Module.
+How do you debug remote PowerShell sessions?,Using Enter-PSSession with debugging enabled and VSCode integration.
+How do you debug scripts?,"Using Set-PSBreakpoint, Write-Debug, and the VS Code PowerShell debugger (the Windows-only ISE is deprecated)."
+How do you declare an array in PowerShell?,"$array = @(1, 2, 3)"
+How do you define a function in PowerShell?,Use `function FunctionName {}` syntax.
+How do you define a variable in PowerShell?,"Using the `$` prefix, e.g., `$name = 'Alice'`."
+How do you define default values for parameters?,"Within the param block, e.g. [string]$name = 'default'."
+How do you discover available cmdlets?,Use `Get-Command`.
+How do you ensure idempotency in PowerShell scripts?,Check current state before making changes; avoid side effects.
+How do you execute external programs from PowerShell?,"By calling the executable directly, e.g., notepad.exe."
+How do you exit a loop prematurely?,Use the `break` keyword.
+How do you export data to CSV?,Using Export-Csv cmdlet.
+How do you filter objects in a pipeline?,Using the Where-Object cmdlet or the ? alias.
+How do you format output?,"Using Format-Table, Format-List, or Format-Custom cmdlets."
+How do you handle errors in PowerShell?,Use try/catch/finally blocks and the $Error variable for error handling.
+How do you handle errors non-terminating vs terminating?,Terminating errors can be caught by try/catch; non-terminating need ErrorAction parameter.
+How do you handle JSON data in PowerShell?,Use ConvertFrom-Json and ConvertTo-Json cmdlets.
+How do you handle modules in PowerShell?,Install via Install-Module and import using Import-Module.
+How do you handle output redirection?,"Use > for stdout, 2> for stderr."
+How do you implement logging in PowerShell scripts?,"Use transcript, Write-Verbose, Write-Information, or custom log files."
+How do you import commands from a remote session?,Use Import-PSSession cmdlet.
+How do you import data from CSV?,Using Import-Csv cmdlet.
+How do you iterate through a hashtable?,Using foreach with $hashtable.GetEnumerator().
+How do you manage credentials securely?,"Use Get-Credential to prompt, and store secrets with the SecretManagement module backed by a vault such as SecretStore or an external secret manager."
+How do you manage dependencies between scripts?,Using modules and Import-Module or dot-sourcing.
+How do you manage multithreading in PowerShell?,"Use ForEach-Object -Parallel (PowerShell 7), thread jobs via Start-ThreadJob, background jobs, or runspaces. Workflow parallelism existed only in Windows PowerShell 5.1."
+How do you manipulate XML in PowerShell?,Load XML into [xml] typed variable and use XPath.
+How do you pass arguments to a script?,By position or named parameters when invoking the script.
+How do you read user input?,Use Read-Host cmdlet.
+How do you run a script as a different user?,Use `Start-Process -Credential`.
+How do you run a script asynchronously?,Use Start-Job or run scripts in a separate PowerShell session.
+How do you secure PowerShell scripts?,"Use execution policies, code signing, credential management, and constrained endpoints."
+How do you securely prompt for user credentials?,Use `Get-Credential`.
+How do you serialize and deserialize objects in PowerShell?,Using Export-CliXml and Import-CliXml.
+"How do you set `$ErrorActionPreference`, and why?","To control error behavior: `Stop`, `Continue`, etc."
+How do you sign PowerShell scripts?,Use Set-AuthenticodeSignature with a code signing certificate.
+How do you sort objects?,Use Sort-Object cmdlet.
+How do you stop a job?,Use Stop-Job cmdlet.
+How do you stop a running script?,Use Ctrl+C or throw a terminating error.
+How do you trap errors globally in a script?,Use the trap statement or set $ErrorActionPreference.
+"How do you use `if`, `else`, and `elseif` in PowerShell?",Conditional branching using `if (condition) {}` blocks.
+How do you use `Invoke-Command` and `Enter-PSSession`?,`Invoke-Command` runs code remotely; `Enter-PSSession` starts an interactive session.
+How do you use `Start-Job` and `Receive-Job`?,To start and retrieve results from background jobs.
+How do you use DSC to enforce configuration state?,Define configurations in scripts and apply them using Start-DscConfiguration.
+How do you use parameter validation?,"Use attributes like [ValidateSet()], [ValidateRange()] in param blocks."
+How do you use regular expressions in PowerShell?,"With -match, -replace operators and .NET regex classes."
+How do you work with environment variables?,Access via $env:VariableName.
+How do you write a PowerShell function that accepts pipeline input?,Define parameters with ValueFromPipeline or ValueFromPipelineByPropertyName.
+How do you write to a file?,"Using Out-File, Set-Content, or Add-Content cmdlets."
+How does PowerShell handle type conversion?,"PowerShell performs implicit and explicit type conversion, using casting and .NET methods."
+What are aliases in PowerShell?,"Shortcuts for cmdlets, e.g., `ls` for `Get-ChildItem`."
+What are attributes in PowerShell?,Metadata added to parameters or functions to modify behavior.
+What are background jobs in PowerShell?,Asynchronous tasks started with `Start-Job`.
+What are common data types in PowerShell?,"String, Int, Bool, Array, Hashtable, PSCustomObject."
+What are common parameter attributes?,"Mandatory, Position, HelpMessage, ValidateSet."
+What are PowerShell providers?,"Providers give access to different data stores like the file system, registry, and certificate store as if they were file systems."
+What are runspaces?,Lightweight PowerShell execution environments allowing parallel execution.
+What are SecureStrings and how are they used?,Encrypted strings used for storing passwords.
+What are the differences between `function` and `filter`?,`filter` is optimized for pipeline input and processes one object at a time.
+What does `-ErrorAction` do?,Overrides error action for individual commands.
+What does `Get-Member` do?,Displays the properties and methods of an object.
+What does `Select-Object` do?,Selects specified properties of an object.
+What is 'Pipeline Variable'?,"A variable that holds the current object in the pipeline, accessed via ForEach-Object -PipelineVariable."
+"What is `$?`, `$LASTEXITCODE`, and `$Error` used for?","`$?` is last command status, `$LASTEXITCODE` is exit code, `$Error` is error stack."
+What is `$null` in PowerShell?,`$null` represents an absence of value or object.
+What is `Out-Null` used for?,Suppresses output by sending it to null.
+What is a cmdlet in PowerShell?,Cmdlets are built-in PowerShell commands with a Verb-Noun naming convention that return .NET objects.
+What is a hashtable in PowerShell?,A collection of key-value pairs: `$hash = @{ Key = 'Value' }`
+What is a PowerShell module and how do you import one?,A collection of cmdlets/functions; use `Import-Module`.
+What is a PowerShell profile and what is it used for?,A script that runs on shell startup for environment setup.
+What is a PowerShell session?,A persistent connection to a remote or local instance.
+What is a PowerShell workflow?,"A Windows PowerShell 5.1 feature for long-running, restartable, parallelizable scripts. Removed in PowerShell 7; use jobs, ForEach-Object -Parallel, or an external orchestrator instead."
+What is a PSObject?,A flexible object type for creating structured output.
+What is a script block and how is it used?,A block of code enclosed in `{}` that can be passed or executed.
+What is an advanced function?,"Functions that behave like cmdlets with support for parameters, pipeline input, and more."
+What is Desired State Configuration (DSC)?,A management platform for configuration as code using PowerShell.
+What is dot-sourcing?,Running a script in the current scope to import functions and variables.
+What is PowerShell Remoting and how does it work?,"Enables remote command execution, over WinRM on Windows and over SSH on any platform in PowerShell 7."
+"What is PowerShell, and how does it differ from Command Prompt or Bash?","PowerShell is an object-oriented shell and scripting language built on .NET, unlike CMD or Bash which are text-based and string-oriented."
+What is reflection in PowerShell?,"Accessing metadata about objects, types, and assemblies at runtime."
+"What is the 'Begin', 'Process', and 'End' blocks in advanced functions?",Special blocks for pipeline processing stages.
+What is the 'dynamic parameters' feature?,Parameters that are added dynamically during runtime.
+What is the 'using' statement in PowerShell 5.0+?,Allows importing namespaces or modules at the top of scripts.
+What is the difference between $args and param()?,$args is an automatic array for unnamed arguments; param() defines named parameters.
+What is the difference between $null and empty string?,"$null means no value, an empty string is a value of zero length."
+What is the difference between $PSVersionTable and $Host?,"$PSVersionTable shows PowerShell version info, $Host gives host environment info."
+What is the difference between -and and &&?,"-and is a logical operator on boolean expressions. In PowerShell 7 and later, && and || are pipeline chain operators that run the next command based on the previous command's success; Windows PowerShell 5.1 does not have them."
+What is the difference between -eq and -like operators?,"-eq tests equality, while -like supports wildcard pattern matching."
+"What is the difference between `$PROFILE`, `$MyInvocation`, and `$PSScriptRoot`?","`$PROFILE` is the profile path, `$MyInvocation` provides script context, `$PSScriptRoot` is the script’s folder path."
+What is the difference between `Write-Output` and `Return`?,`Write-Output` sends data to the pipeline; `Return` exits a function with a value.
+"What is the difference between `Write-Output`, `Write-Host`, and `Write-Verbose`?","`Write-Output` sends to pipeline, `Write-Host` writes to console, `Write-Verbose` logs when enabled."
+What is the difference between a parameter and an argument?,"Parameter is defined in the function signature, argument is the value passed."
+What is the difference between foreach and ForEach-Object?,"'foreach' is a language keyword, ForEach-Object is a cmdlet that processes pipeline input."
+What is the difference between functions and cmdlets?,"Cmdlets are compiled commands built in .NET, while functions are scripts written in PowerShell."
+What is the difference between functions and scripts?,Functions are reusable blocks inside scripts or sessions; scripts are standalone files.
+What is the difference between script scope and global scope?,Global scope variables are accessible everywhere; script scope is limited to the script.
+What is the difference between splatting and normal parameter passing?,"Splatting passes parameters as a hashtable or array, improving readability."
+What is the difference between synchronous and asynchronous commands?,Synchronous commands block until complete; asynchronous run concurrently.
+What is the difference between value types and reference types in PowerShell?,"Value types store data directly, reference types store pointers to data."
+What is the difference between Write-Verbose and Write-Debug?,"Write-Verbose is for general info, Write-Debug is for debugging output."
+"What is the PowerShell pipeline, and how does it work internally?","The pipeline passes objects, not text, between cmdlets enabling rich object manipulation."
+What is the purpose of 'Get-Content'?,Reads contents of a file.
+What is the purpose of `Get-Help` and how do you use it?,"Displays cmdlet documentation, e.g., `Get-Help Get-Service -Full`."
+What is the purpose of the 'Get-Process' cmdlet?,Retrieves information about running processes.
+What is the purpose of the `param()` block?,Defines parameters that a script or function accepts.
+What is the purpose of the pipeline (`|`) in PowerShell?,"It passes objects from one command to another, enabling powerful data manipulation."
+What is the role of the PowerShell console host?,It hosts the PowerShell engine and provides the user interface.
+"What is the syntax for `foreach`, `while`, and `do-while` loops?","`foreach ($i in $array) {}`, `while (condition) {}`."
+What is variable scope in PowerShell?,"Scope defines where a variable is accessible: Global, Script, Local, or Private."
