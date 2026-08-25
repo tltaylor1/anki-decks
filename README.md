@@ -18,6 +18,7 @@ date in the deck's section below.
 | [bicep](bicep/) | 50 | Bicep from the language through pipelines and deployment stacks, with the Terraform contrasts, checked current in August 2026 |
 | [cybersecurity](cybersecurity/) | 184 | Security fundamentals across network, cloud, application, and governance, backup and recovery included, checked current in August 2026 |
 | [aws-scs-c03](aws-scs-c03/) | 426 | AWS Certified Security Specialty (SCS-C03), service facts through the C03 additions, checked current in August 2026 |
+| [compliance-frameworks](compliance-frameworks/) | 226 | The major frameworks, then FedRAMP and CMMC in operating depth through 20x, OSCAL, and continuous monitoring, checked current in August 2026 |
 
 More subjects land here one at a time.
 
@@ -78,6 +79,17 @@ response, and the SCS-C03 additions: Verified Access, Security Lake
 and OCSF, resource control policies, and declarative policies. Facts
 only, no practice questions; the exam names appear because the deck
 tracks that exam's scope.
+
+## Compliance Frameworks
+
+A survey of the major frameworks, SOX, HIPAA, SOC 2, ISO 27001, NIST
+CSF, PCI DSS, GDPR, CIS Controls, then the deep half: FedRAMP and
+CMMC as they actually operate and differ, the authorization path and
+its artifacts, continuous monitoring and its reconciliation failures,
+the 20x transition with its dates labeled as the estimates they are,
+OSCAL, and the automation engineering that keeps a program running.
+The comparison cards exist because habits from one framework silently
+produce wrong answers in the other.
 
 ## Updating
 

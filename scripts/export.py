@@ -29,6 +29,7 @@ DECKS = {
     "bicep": "Bicep",
     "cybersecurity": "Cybersecurity",
     "aws-scs-c03": "AWS Security Specialty",
+    "compliance-frameworks": "Compliance Frameworks",
 }
 
 COLLECTION = Path.home() / ".local/share/Anki2/User 1/collection.anki2"
