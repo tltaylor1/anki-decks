@@ -24,6 +24,7 @@ from anki.collection import Collection, DeckIdLimit, ExportAnkiPackageOptions
 # deck; only decks named here can be exported.
 DECKS = {
     "powershell": "PowerShell",
+    "python": "Python",
 }
 
 COLLECTION = Path.home() / ".local/share/Anki2/User 1/collection.anki2"

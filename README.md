@@ -13,6 +13,7 @@ date in the deck's section below.
 | Deck | Cards | Scope |
 |---|---|---|
 | [powershell](powershell/) | 133 | PowerShell from the basics through scripting, checked current for PowerShell 7 in August 2026 |
+| [python](python/) | 125 | Python fundamentals with a security slant, written from a PowerShell background, checked current in August 2026 |
 
 More subjects land here one at a time.
 
@@ -23,6 +24,16 @@ functions and advanced functions, error handling, modules, remoting
 over WinRM and SSH, jobs and runspaces, parallelism in PowerShell 7,
 and script security. Where Windows PowerShell 5.1 differs from
 PowerShell 7, the card says so.
+
+## Python
+
+The language from types through comprehensions, functions, exceptions,
+files, and the standard library a security engineer leans on: hashlib,
+ipaddress, subprocess and its shell gotcha, logging, json, re. Most
+cards carry a parenthetical mapping the concept to its PowerShell
+equivalent, because the deck was written while crossing from one
+language to the other, and that bridge is the fastest way over for
+anyone making the same crossing.
 
 ## Updating
 
