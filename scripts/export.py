@@ -26,6 +26,7 @@ DECKS = {
     "powershell": "PowerShell",
     "python": "Python",
     "kql": "KQL",
+    "bicep": "Bicep",
 }
 
 COLLECTION = Path.home() / ".local/share/Anki2/User 1/collection.anki2"

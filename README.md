@@ -15,6 +15,7 @@ date in the deck's section below.
 | [powershell](powershell/) | 133 | PowerShell from the basics through scripting, checked current for PowerShell 7 in August 2026 |
 | [python](python/) | 125 | Python fundamentals with a security slant, written from a PowerShell background, checked current in August 2026 |
 | [kql](kql/) | 118 | Kusto Query Language for logs and hunting, from operators through time series, checked current in August 2026 |
+| [bicep](bicep/) | 50 | Bicep from the language through pipelines and deployment stacks, with the Terraform contrasts, checked current in August 2026 |
 
 More subjects land here one at a time.
 
@@ -45,6 +46,15 @@ security work leans on, failed logons, spikes, correlation across
 tables. Cards state what exists in the language and name what does
 not, because half of writing good KQL is knowing which SQL habit has
 no equivalent here.
+
+## Bicep
+
+The language itself, parameters through modules and decorators, then
+the operational half most decks skip: .bicepparam files, deployment
+scopes, what-if against live Azure, the BicepDeploy pipeline task,
+and deployment stacks with deny settings as the successor to
+Blueprints. Cards contrast with Terraform where the models genuinely
+differ, state above all.
 
 ## Updating
 
