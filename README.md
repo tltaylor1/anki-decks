@@ -16,6 +16,7 @@ date in the deck's section below.
 | [python](python/) | 125 | Python fundamentals with a security slant, written from a PowerShell background, checked current in August 2026 |
 | [kql](kql/) | 118 | Kusto Query Language for logs and hunting, from operators through time series, checked current in August 2026 |
 | [bicep](bicep/) | 50 | Bicep from the language through pipelines and deployment stacks, with the Terraform contrasts, checked current in August 2026 |
+| [cybersecurity](cybersecurity/) | 184 | Security fundamentals across network, cloud, application, and governance, backup and recovery included, checked current in August 2026 |
 
 More subjects land here one at a time.
 
@@ -55,6 +56,14 @@ scopes, what-if against live Azure, the BicepDeploy pipeline task,
 and deployment stacks with deny settings as the successor to
 Blueprints. Cards contrast with Terraform where the models genuinely
 differ, state above all.
+
+## Cybersecurity
+
+The broad fundamentals deck: the CIA triad through zero trust, network
+controls and their attacks, web vulnerabilities and their defenses,
+cloud posture, identity models, incident response, governance and the
+major compliance frameworks, and a backup and recovery section from
+the 3-2-1 rule through immutability and restore testing.
 
 ## Updating
 

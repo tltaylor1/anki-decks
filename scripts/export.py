@@ -27,6 +27,7 @@ DECKS = {
     "python": "Python",
     "kql": "KQL",
     "bicep": "Bicep",
+    "cybersecurity": "Cybersecurity",
 }
 
 COLLECTION = Path.home() / ".local/share/Anki2/User 1/collection.anki2"

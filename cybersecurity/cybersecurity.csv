@@ -1,0 +1,185 @@
+front,back
+Compliance vs security; how are they different?,"Compliance is meeting regulations; security is broader, focusing on managing risks beyond compliance."
+Define a security playbook.,"Detailed, repeatable steps for responding to specific incident types (e.g., ransomware, data breach)."
+"Define authentication, authorization, and accounting (AAA).","Authentication verifies a user's identity, authorization determines what resources they can access, and accounting (or auditing) logs their actions for monitoring and review; collectively forming the AAA framework in secure systems."
+Define cybersecurity frameworks.,"Structured models like NIST, ISO 27001, and CIS Controls to guide security program development."
+Define encryption at rest vs in transit.,"Encryption at rest protects stored data (like disks and databases) from unauthorized access, while encryption in transit protects data traveling across networks (e.g., TLS-secured network traffic)."
+Define incident response lifecycle.,"The incident response lifecycle comprises Preparation, Identification, Containment, Eradication, Recovery, and Lessons Learned ; a structured approach for handling security incidents."
+Define Insecure Direct Object Reference (IDOR).,Occurs when users can access unauthorized objects by modifying request parameters; fix by authorization checks.
+Define privileged code execution.,Executing code with elevated permissions; should be minimized and audited.
+Define Public Key Infrastructure (PKI) and why it matters.,Framework used for digital certificates and key management; critical for authentication and encryption.
+Define zero trust security.,"Zero Trust is a security model where no implicit trust is granted to any user or device, regardless of location. Verification is required for every access request, and continuous trust evaluation is enforced."
+Describe MAC filtering.,MAC filtering restricts network access by allowing only devices with approved MAC addresses.
+Difference between business continuity and disaster recovery?,Business continuity ensures essential services continue; disaster recovery restores systems after disruption.
+Difference between Red Team and Blue Team.,"Red Team simulates attackers, Blue Team defends; Purple Team combines collaboration."
+Difference between stateful and stateless firewalls?,"Stateful firewalls track connection state and context, allowing more complex inspection; stateless firewalls examine packets individually without context."
+Due care vs due diligence; what’s the difference?,Due care is acting responsibly to protect assets; due diligence is the investigation to ensure risk is managed.
+"Explain access control models: DAC, MAC, RBAC.","DAC (Discretionary Access Control) allows data owners to control access. MAC (Mandatory Access Control) enforces strict policies defined by a central authority. RBAC (Role-Based Access Control) assigns permissions to roles, and users are granted access based on their role membership."
+Explain application whitelisting.,Allow only approved software to execute; prevents unauthorized executables.
+Explain BYOD (Bring Your Own Device) security considerations.,"Ensuring personal device security, access control, and data protection while respecting privacy."
+Explain container security basics.,"Securing images, registries, orchestrators, and runtime with best practices and scanning."
+Explain Cross-Site Scripting (XSS).,XSS allows attackers to inject client-side scripts; prevent by encoding output and sanitizing inputs.
+Explain defense avoidance and evasion techniques.,"These are techniques attackers use; like obfuscation, rootkits, spoofing, and tunneling; to bypass detection by security systems."
+Explain defense in depth.,"Defense in depth is a layered security strategy that implements multiple overlapping protective measures, such as firewalls, intrusion detection systems, encryption, and policy controls; to create redundancy and reduce risk exposure."
+Explain directory traversal vulnerability.,Attack where user-provided path accesses unauthorized files; prevent using path validation or canonicalization.
+Explain HTTPS interception by proxies.,"Proxy decrypts HTTPS traffic for inspection, then re-encrypts it to maintain secure sessions while scanning."
+Explain input validation vs output encoding.,Validation ensures input follows expected format; encoding ensures output is safe for contexts like HTML or SQL.
+Explain Just-In-Time (JIT) access.,"Temporary elevation of access for administrators when needed, reducing permanent privileged access risk."
+Explain layered security in cloud architecture.,"Implement security at multiple layers; network, host, identity, data, and app; to create depth of protection."
+Explain MAC vs IP whitelisting.,MAC whitelisting filters at Layer 2 based on MAC addresses; IP filtering applies at Layer 3 using IP addresses.
+Explain network forensics in a breach response.,"Network forensics involves capturing and analyzing network data, such as packet captures, flow logs, and DNS logs; to investigate security incidents."
+"Explain secrets management (HashiCorp Vault, Azure Key Vault).","Secure storage and access control for credentials, API keys, and certificates."
+Explain shared responsibility in cloud security.,"Cloud providers secure the cloud infrastructure; customers secure their data, apps, and configurations."
+Explain Snort.,An open-source IDS/IPS used to monitor and analyze network traffic for signature-based or anomaly-based threats.
+Explain SOC 2 compliance.,"Reporting framework for security, availability, processing integrity, confidentiality, and privacy of systems."
+Explain split tunneling in VPNs.,"Split tunneling sends some traffic over the VPN and some directly to the internet, balancing performance with access to internal network resources."
+Explain VLAN and its security benefits.,"A Virtual LAN segments a network logically to isolate traffic, improving security by limiting broadcast domains and controlling access between segments."
+Handling insider security incidents?,"Conduct fair investigations, remediate measures, reinforce trust, ensure policy compliance."
+How do managed languages aid security against buffer overflow?,Automatic memory safety and boundary checks reduce common flaws.
+How do you assess third-party vendor risk?,"Use questionnaires, security reviews, SLAs, and periodic audits."
+How do you build a security culture in an organization?,"Engage leadership, run ongoing training, celebrate secure behaviors, integrate security into processes."
+How do you ensure APIs are secure?,"Authenticate, authorize, validate input, enforce rate limits, log usage, use HTTPS."
+How do you justify cybersecurity budgets?,"Use risk assessment, ROI from prevented breaches, compliance requirements, and cost of recovery."
+How do you respond to audit findings?,"Prioritize, remediate, document, and prevent recurrence through improvements."
+How do you secure API access with OAuth or API keys?,Use secure token-based authentication with limited scopes and short lifetimes.
+How do you secure serverless functions?,"Use minimal permissions, input validation, and monitor execution context."
+How does a honeypot work?,A honeypot is a decoy system made intentionally vulnerable to attract attackers and analyze their behavior.
+How does CDN security help mitigate DDoS?,By distributing traffic and absorbing attack volumes across edge nodes.
+How does ransomware affect backups?,"It can encrypt or delete backups, so immutability, offsite copies, and isolation are essential."
+How does rate limiting help mitigate DDoS attacks?,"By limiting excessive requests from the same source, rate limiting helps protect availability."
+How does SSH key-based authentication differ from passwords?,"Uses asymmetric cryptography; more secure, immune to brute force, and not easily captured."
+How is Splunk used in cybersecurity?,"A SIEM platform for collecting, indexing, and analyzing security logs and events at scale."
+How should backup testing be done?,"Regularly perform restores, automate tests, check data integrity, and document outcomes."
+How to measure ROI of security investments?,"Quantify risk reduction, saved incident costs, audit avoidance, and threat deflection effectiveness."
+How to secure file uploads?,"Validate file type/size, store outside web root, and scan for malware."
+How to secure session management?,"Use secure tokens, zero session fixation, regenerate session IDs, and set timeouts."
+Impact of failing to patch critical systems?,"Leaves systems exposed to known exploits, increasing risk of compromise."
+Importance of user security awareness training.,Helps reduce phishing and social engineering risks by educating users.
+Overview of PCI DSS compliance.,"Standards ensuring secure handling of payment card data, including encryption, access control, and monitoring."
+Role of auditors in security programs?,"Audit adherence to policies, regulations, and identify gaps or compliance issues."
+Role of encryption for data in transit vs at rest?,Encrypt during transit to protect against interception; encrypt at rest to protect storage compromise.
+What are best practices for Microsoft 365 backups?,"Use third-party tools, back up all services, support granular restore, and enforce retention policies."
+What are Cloud Security Posture Management (CSPM) tools?,Tools that assess cloud configurations against best practices and compliance standards.
+What are common security metrics; to measure success?,"MTTD (Mean Time to Detect), MTTR (Mean Time to Respond), incident counts, risk reduction."
+What are Data Loss Prevention (DLP) systems?,"Solutions that detect, prevent, and monitor unauthorized data transfers to protect sensitive information."
+What are immutable backups?,Backups that cannot be modified or deleted for a fixed period; crucial for ransomware protection.
+What are JWT tokens and how to validate securely?,"JSON Web Tokens are signed; validation includes checking signature, issuer, audience, and expiration."
+What are PII and PCI?,PII (Personally Identifiable Information) is data that can identify individuals; PCI (Payment Card Industry) refers to standards ensuring secure handling of cardholder data under PCI DSS compliance.
+What are RADIUS and TACACS+?,"Authentication protocols for network devices; RADIUS is combined AAA, TACACS+ separates them for detailed control."
+What are security governance components?,"Policy, risk management, accountability, review cycles, continuous improvement."
+What are security groups in AWS/Azure?,Virtualized firewall rules assigned to VMs to control inbound/outbound traffic.
+What are some KPIs for backup systems?,"Backup success rate, restore success rate, RPO/RTO compliance, storage use, and retention audit results."
+What are supply chain attacks?,"Attackers compromise vendor software/hardware to infiltrate downstream targets (e.g., SolarWinds)."
+What are TTPs in cybersecurity?,"Tactics, Techniques, and Procedures define the behavior patterns of attackers."
+What does 'secure by design' mean?,"Embedding security considerations into architecture and development from the outset, not adding it later."
+What does secure coding mean?,"Writing software with explicit efforts to guard against common vulnerabilities, including validation and sanitization."
+What is 'Security by Obscurity' and why isn't it enough?,Hiding system details provides little real protection; must be paired with real security measures.
+What is a baseline image in VM deployment?,A pre-hardened VM template with secure configurations to ensure consistency.
+What is a bastion host?,"A hardened single-purpose server placed in a network’s perimeter, acting as the only exposed system to facilitate secure remote access."
+What is a buffer overflow and how to mitigate it?,Writing data past buffer size; mitigate using safe language constructs and bounds checking.
+What is a Certificate Authority (CA)?,Trusted entity that issues digital certificates to verify identities.
+What is a Cloud Access Security Broker (CASB)?,A control hub that enforces security policies across cloud services and visibility into cloud usage.
+What is a cloud incident playbook?,Predefined steps to respond to security incidents in cloud environments.
+What is a cyber maturity assessment?,Evaluates security practices against a maturity framework to plan improvements.
+What is a data classification policy?,"Categorizing data (e.g., public, internal, confidential) to enforce appropriate controls."
+What is a firewall?,A firewall enforces a security policy by filtering incoming and outgoing network traffic based on defined rules to block unauthorized access.
+What is a full backup vs incremental backup?,Full backs up all data; incremental backs up only data changed since the last backup.
+What is a Golden SAML attack?,"An attacker who steals the federation server's token-signing certificate can forge SAML assertions for any user and reach any federated service, bypassing MFA; used in the SolarWinds intrusion."
+What is a honeynet?,A network of honeypots designed to gather intelligence on attacker tactics across multiple systems.
+What is a proxy server?,"A proxy server intermediates client and server requests, often providing anonymity, content filtering, and caching."
+What is a secure cookie?,"HTTP-only, Secure, SameSite cookies; which reduce exposure to theft and XSS attacks."
+What is a security baseline?,A security baseline is a defined set of minimum security standards or configurations that must be met across systems and devices to maintain an organization's security posture.
+What is a security maturity model?,"Framework assessing the maturity of an organization's security practices (e.g., CMMI, NIST CSF maturity tiers)."
+What is a Security Operations Center (SOC)?,"A centralized team and facility responsible for monitoring, detecting, and responding to security incidents."
+What is a security policy?,"A security policy is a formal document outlining an organization's rules and procedures for protecting assets, defining roles and responsibilities, and setting expectations for acceptable behaviors."
+What is a Security SLA?,"Defines security-related service expectations, like response times and availability."
+What is a shimmer in payment card fraud?,"A paper-thin device hidden inside a chip reader to capture EMV chip data, the chip-era successor to the magnetic stripe skimmer."
+What is a VPN concentrator?,A device that handles and scales multiple VPN connections efficiently.
+What is a VPN?,A Virtual Private Network creates an encrypted tunnel over public networks to enable secure remote access to a private network.
+What is a vulnerability scanner?,A tool that automatically detects known software vulnerabilities on systems or networks.
+What is a Web Application Firewall (WAF)?,Protects web apps from common web-based attacks like SQL injection and XSS by filtering HTTP traffic.
+What is a web shell?,"Malicious script uploaded to a compromised server, giving remote access."
+What is a zero-day vulnerability?,An unknown and unpatched vulnerability exploited by attackers before developers can mitigate it.
+What is an Acceptable Use Policy (AUP)?,Defines acceptable behavior and limitations for employees using corporate IT assets.
+What is an incident response plan (IRP)?,"A structured playbook detailing how to detect, analyze, respond, and recover from security incidents."
+What is an insider threat program?,"Monitoring for misuse by trusted users; through anomalies in behavior, privilege access, or data exfiltration."
+What is an NDA’s role in cybersecurity?,Protect sensitive data shared with employees or third parties through legal agreements.
+What is API rate limiting?,Throttle requests to prevent abuse or service overload; implement using rate limit headers or quotas.
+What is ARP poisoning?,An attack where the attacker sends fake ARP messages to associate their MAC with a victim's IP to intercept or manipulate traffic.
+What is Attribute-Based Access Control (ABAC)?,"Access decisions based on attributes like user role, location, and time (contextual)."
+What is BaaS (Backup as a Service)?,"A cloud-managed backup solution handling storage, automation, scheduling, and recovery."
+What is backup sprawl and why is it bad?,"Uncontrolled growth of backups and tools, leading to inefficiencies, risk, and increased costs."
+What is broken authentication?,Weak authentication systems that attackers exploit with credential stuffing or session hijacking; mitigate with MFA and secure session management.
+What is clickjacking?,Attacker overlays content to trick users into clicking maliciously; mitigate with X-Frame-Options and frame busting.
+What is cloud-native logging for security?,"Collecting logs from SaaS, PaaS, and IaaS services for detection and audit."
+What is cloud-to-cloud backup?,"A backup of data from one cloud service (e.g., Microsoft 365) to another secure cloud environment."
+What is configuration drift and how to detect it?,Drift is divergence from desired state; detect with drift detection tools.
+What is container image scanning?,Inspecting container images for known vulnerabilities before deployment.
+What is container runtime security?,Monitoring and protecting containers during their execution for misbehavior.
+What is Content Security Policy (CSP)?,HTTP header that controls sources for content to mitigate XSS.
+What is CORS and its role in web security?,Cross-Origin Resource Sharing; controls how web apps handle requests between different domains.
+What is Cross-Site Request Forgery (CSRF)?,CSRF tricks authenticated users into performing actions unknowingly; mitigations include anti-CSRF tokens and same-site cookies.
+What is cyber hygiene?,"Basic preventative practices like patching, password hygiene, and backups that reduce security risk."
+What is data deduplication in backup systems?,Eliminates redundant data during backup to save space and speed up processes.
+What is debugging risk in production?,Exposes sensitive data and code paths; disable debugging in live environments.
+What is DNS poisoning?,Manipulating DNS responses to redirect users to malicious sites.
+What is dynamic application security testing (DAST)?,Analyzing a running application to find vulnerabilities.
+What is ephemeral computing?,"Short-lived compute instances that are replaced rather than repaired, which shrinks the attack surface and simplifies recovery."
+What is GDPR's main principle?,"The General Data Protection Regulation is centered on protecting EU citizens' personal data, requiring transparency, purpose limitation, data minimization, user consent, and data subject rights."
+What is GDPR’s breach notification requirement?,Organizations must notify authorities within 72 hrs of discovering a data breach affecting personal data.
+What is ICMP tunneling?,Encapsulating data inside ICMP packets to bypass firewall restrictions.
+What is Infrastructure as Code (IaC) and how do you secure it?,"IaC manages infrastructure through declarative code; securing it involves scanning templates, using secure modules, and code reviews."
+What is input fuzzing?,Testing an app with random/malformed inputs to find vulnerabilities.
+What is insecure deserialization?,Malicious data payloads cause code execution when deserialized; mitigate by limiting accepted types and validating data.
+What is ISO 27001?,"An international standard for establishing, implementing, and maintaining an ISMS (Information Security Management System)."
+What is lateral movement in cloud environments?,"After compromise, attackers move between resources in the same cloud environment."
+What is microsegmentation?,"Fine-grained network segmentation (e.g., VM-to-VM) to mitigate lateral movement within environments."
+What is multi-factor authentication (MFA)?,"MFA requires two or more distinct types of credentials, such as something you know (password), something you have (token), and something you are (biometrics); to increase security beyond simple password authentication."
+What is NAT?,"Network Address Translation (NAT) allows multiple devices to share a single public IP, translating between internal and external network addresses."
+What is network access control (NAC)?,"Enforcing compliance checks (e.g., antivirus, patches) before allowing network access."
+What is network segmentation?,Dividing a network into smaller zones to control access and limit attackers’ spread.
+What is NIST SP 800-53?,A catalog of security controls for federal information systems and organizations.
+What is non-repudiation?,"Non-repudiation ensures a party cannot deny the authenticity of their action, typically achieved through digital signatures, logs, and secure audit trails."
+What is OWASP Top 10?,"The top 10 web application vulnerabilities, as identified by the Open Web Application Security Project; used widely as a guide for secure development."
+What is parameter tampering?,Manipulating client-side parameters to gain unauthorized access; prevent via server-side validation.
+What is patch management?,Regularly applying updates to fix vulnerabilities and reduce risk.
+What is port security on switches?,Port security restricts access by limiting the number of devices or specific MAC addresses allowed on a switch port.
+What is Recovery Point Objective (RPO)?,"The maximum acceptable amount of data loss in time (e.g., 4 hours of data)."
+What is Recovery Time Objective (RTO)?,The maximum acceptable time to restore service and data after a failure or incident.
+What is remote code execution (RCE)?,Attacker executes commands on a remote system; prevent with secure coding and input validation.
+What is remote memory forensic analysis?,Collecting memory dumps from a compromised system to investigate malware or system compromise.
+What is risk?,"Risk is the potential for loss or damage when a threat exploits a vulnerability. It's generally calculated as Risk = Threat × Vulnerability × Impact, guiding how resources are allocated for mitigation."
+What is Role-Based Access Control (RBAC)?,Assigning user permissions based on roles; simplifies management and minimizes excessive permissions.
+What is Runtime Application Self-Protection (RASP)?,Security embedded in applications that detect and respond to threats in real-time.
+What is secure boot and immutable infrastructure?,"Secure boot verifies the integrity of boot processes; immutable infra ensures systems are replaced, not patched, maintaining baseline security."
+What is Secure DNS (DoH or DoT)?,Encrypting DNS queries (over HTTPS or TLS) to protect from eavesdropping and manipulation.
+What is server-side request forgery (SSRF)?,"The app is tricked into making requests to internal resources, like the cloud metadata endpoint; prevent with URL allow-lists, blocked internal ranges, and IMDSv2 on AWS."
+What is Shadow IT risk?,Unapproved systems or services used by users without security oversight.
+What is social engineering?,"Social engineering is the art of manipulating individuals into divulging confidential information or performing actions that compromise security, often through deception or psychological manipulation."
+What is SQL injection and how can you prevent it?,SQL injection allows attackers to manipulate database queries; prevent using parameterized queries and input validation.
+What is SSL offloading?,Terminating SSL connections on a reverse proxy or load balancer to reduce encryption overhead on backend servers.
+What is SSL stripping?,An attack downgrading HTTPS to HTTP to expose unencrypted data to interception.
+"What is SSL/TLS, and why is it important?","SSL/TLS provides encryption for data in transit, ensuring confidentiality, integrity, and trust for network communication."
+What is static code analysis (SAST)?,Automated review of source code for vulnerabilities before execution.
+What is STRIDE threat modeling?,"Framework categorizing threats by spoofing, tampering, repudiation, info disclosure, DoS, elevation."
+What is the 3-2-1 backup rule?,"Keep 3 copies of data on 2 different media, with 1 offsite or immutable copy. It's a foundational backup strategy."
+What is the CIA triad?,"The CIA triad stands for Confidentiality, Integrity, and Availability; three foundational objectives in information security. Confidentiality ensures data is only accessible to authorized entities; Integrity protects data accuracy and prevents unauthorized modification; Availability ensures that data and systems are accessible when needed."
+What is the difference between SIGINT vs OSINT?,SIGINT uses intercepted communications for intelligence; OSINT uses publicly available sources.
+What is the difference between snapshot and backup?,"Snapshots are near-instant, on-system states; backups are independent, restorable copies stored separately."
+What is the principle of least privilege?,The principle of least privilege is a security concept that recommends granting users and processes only the minimal access necessary to perform their job. Reducing access limits the potential impact of compromise.
+What is the rule evaluation order in a firewall?,Firewall rules are evaluated top-down; the first match determines action; order is critical.
+What is threat intelligence sharing?,Collaborating on threat data between organizations or sectors to improve collective defense.
+What is threat modeling?,"Threat modeling is a proactive process to identify, prioritize, and analyze potential threats to a system by understanding its architecture, assets, and attack surfaces, and designing appropriate mitigations."
+What regulatory frameworks affect backup/data protection?,"GDPR, HIPAA, SOX, CJIS, and CMMC all influence data retention and protection requirements."
+What’s a DMZ in network security?,"A Demilitarized Zone (DMZ) is a lightly secured subnet that exposes external-facing services (like web servers) to the internet, isolating them from internal systems to reduce risk."
+What’s Azure ARM vs Azure IAM?,ARM: Azure Resource Manager for deploying resources; IAM: Identity and Access Management for permissions.
+What’s input sanitization vs validation?,Sanitization cleans risky characters; validation ensures the data format is correct.
+What’s the difference between active and passive scanning?,"Active scanning sends probes to identify vulnerabilities, while passive scanning observes network traffic without probe impact."
+"What’s the difference between hot, warm, and cold backup?","Hot = live/instant, warm = requires prep, cold = offline/archival with longer recovery time."
+"What’s the difference between threats, vulnerabilities, and exploits?","A threat is anything that can cause harm, a vulnerability is a weakness that can be exploited, and an exploit is the action or tool used by an attacker to leverage that vulnerability."
+What’s the purpose of an IPS vs IDS?,An IDS (Intrusion Detection System) alerts on suspicious activity; an IPS (Intrusion Prevention System) can also block or mitigate detected threats.
+What’s the role of encryption in backup systems?,"It protects data at rest and in transit, ensuring backup confidentiality and compliance."
+Why are backups still necessary for SaaS platforms like Microsoft 365?,Because native retention is limited and does not support point-in-time or granular restores. Backups ensure recoverability.
+Why is air-gapping important in backup strategies?,"It isolates backups from the network, protecting them from ransomware and insider threats."
+Why is code signing important?,"Ensures code integrity and that it hasn’t been tampered with, via trusted signatures."
+Why leadership matters in security governance?,"They provide direction, resource commitment, and enforcement for security initiatives."
