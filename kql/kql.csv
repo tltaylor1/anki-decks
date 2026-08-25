@@ -1,0 +1,119 @@
+front,back
+How can you anonymize data in KQL?,Use hashing functions like 'hash_sha256()'.
+How can you trace an operation across tables?,Use 'operation_Id' or 'session_Id' to correlate across logs.
+How do you analyze multi-tenant data securely?,Filter by tenant ID and apply RBAC on queries.
+How do you build alerts from queries?,Create a query > New alert rule > Define logic and threshold.
+How do you calculate moving averages?,"KQL has no moving_avg(). Build a series with make-series, then apply series_fir() for a moving average."
+How do you calculate percentiles in KQL?,"Use percentile(column, percent) or percentiles() functions."
+How do you check if a field exists?,"Use isnotempty() or isnull(), or gettype() to inspect a dynamic field's type."
+How do you compare app performance before and after a change?,"Summarize by time range (e.g., avg(duration)) and compare time bins."
+How do you compare two timestamps for ordering?,"Use datetime comparison operators like <, >, ==."
+How do you concatenate strings in KQL?,Use strcat() or strcat_array() functions.
+How do you convert data types in KQL?,"Use toint(), tostring(), todatetime(), etc."
+How do you convert UNIX timestamps to datetime?,Use 'unixtime_seconds_todatetime()' or similar functions.
+How do you correlate alerts from different sources?,"Join on common IDs or timestamps, aggregate alert types."
+How do you count the elements of a dynamic array in KQL?,Use array_length(arr). There is no mv-count() function.
+How do you create a reusable KQL function?,Use the 'let' keyword with parameters.
+How do you create a saved query?,Use 'Save' in Logs UI or define in Workbook or Analytics Rule.
+How do you create custom columns with calculations?,Use 'extend' operator with expressions.
+How do you detect brute force attacks using KQL?,Look for multiple failed logins from same IP in short time.
+How do you detect missing data points in time series?,"make-series emits a point for every interval, using its default value where data is missing; series_fill_linear() or series_fill_const() fill the gaps."
+How do you detect performance anomalies?,"Use 'summarize avg()', 'percentiles()', or 'stdev()', then 'render timechart'."
+How do you detect repeated errors across services?,summarize count() by error_message | where count_ > 1
+How do you detect spikes in logs?,"Use 'summarize count() by bin(TimeGenerated, x)' and 'render timechart'."
+How do you export query results from KQL?,Use Azure Portal export options or APIs.
+How do you extract nested fields from JSON?,Use dot notation like dynamicField.subField.
+How do you extract parts of a string using KQL?,"Use substring(), extract(), or parse operators."
+How do you filter data by IP address range?,Use 'ipv4_is_in_range()' function.
+How do you filter data by time?,Use the 'where' clause with time filters like TimeGenerated > ago(1h).
+How do you filter for rows with missing fields?,"Use 'where isnull(field)' or 'where field == """"'."
+How do you find anomalies in data?,Use 'series_decompose_anomalies()' or statistical functions.
+How do you find failed logins in the last 24h?,SecurityEvent | where EventID == 4625 and TimeGenerated > ago(24h)
+How do you find top 10 IP addresses by request volume?,AppRequests | summarize count() by client_IP | top 10 by count_
+How do you find unique users per day?,"Summarize count of distinct user IDs grouped by bin(TimeGenerated, 1d)."
+How do you group data in KQL?,Use 'summarize' with one or more grouping fields.
+How do you handle dynamic or semi-structured logs?,Use dynamic data types and parsing functions.
+How do you handle large result sets?,"KQL has no skip operator. Page with serialize plus row_number() ranges, narrow the time window, or export the results."
+How do you handle time zones in KQL?,"KQL datetimes are UTC. Use datetime_utc_to_local() and datetime_local_to_utc() for zone conversion, and format_datetime() for display."
+How do you identify sessions that lasted longer than X minutes?,Calculate session duration using datetime_diff() and filter accordingly.
+How do you identify slow-running queries?,"Use the portal's query diagnostics, or .show queries in Azure Data Explorer, and filter by duration."
+How do you join across large datasets efficiently?,Use 'hint.shufflekey' or pre-aggregate data before joining.
+How do you join multiple services’ logs?,"Use 'join' with common fields like user_Id, session_Id."
+How do you limit resource usage in complex queries?,Use 'set query_take_max_records' or optimize filters.
+How do you limit the number of rows returned?,Use the 'take' or 'limit' operator.
+How do you merge time-series data from multiple sources?,"Use 'union', then 'summarize' and 'bin' for time grouping."
+How do you monitor API calls in logs?,Filter API operation names and analyze counts or latencies.
+How do you monitor log ingestion status?,Query ingestion logs or monitoring tables for ingestion success or failures.
+How do you optimize queries for cost?,"Filter early, reduce data scanned, use summarize and bins."
+How do you optimize queries for speed?,"Use 'summarize' early, filter as early as possible, reduce joins."
+How do you parameterize KQL queries?,Use 'let' statements and query parameters in workbooks or apps.
+How do you parse a URL in KQL?,Use 'parse_url()' or regex with 'extract()'.
+How do you parse structured logs?,"Use 'parse', 'parse_json', or 'extract'."
+How do you perform a case-insensitive search?,Use '=~' or 'tolower()' to normalize the case.
+How do you perform a regex match in KQL?,Use 'matches regex' operator.
+How do you perform joins in KQL?,"Using the 'join' operator with kinds like inner, leftouter, rightouter, etc."
+How do you pivot data in KQL?,Use 'evaluate pivot()' operator.
+How do you schedule KQL queries?,"Use Azure Monitor Workbooks, Logic Apps, or Automation."
+How do you sort results in KQL?,Use 'sort by' or 'order by'.
+How do you stay current with KQL developments?,"Microsoft Docs, GitHub samples, KQL tutorials, and hands-on labs."
+How do you track user behavior over time?,Use session or user IDs with summarize and time bins.
+How do you troubleshoot failed queries?,"Check syntax, resource limits, and query execution plan."
+How do you use 'invoke' to call user-defined functions?,Invoke calls a function by name with parameters.
+How do you use 'prev()' and 'next()' functions?,Access previous or next row values for trend or pattern detection.
+How do you use 'row_number()' in KQL?,Assigns unique sequential numbers to rows.
+How do you use 'search' in KQL?,Performs a global text search across one or more tables.
+How do you use KQL with Azure Sentinel?,"Use KQL to create analytic rules, hunting queries, and workbooks."
+How do you validate query accuracy?,"Test with known values, validate against source, and use sample datasets."
+How do you visualize time series comparisons?,"Use 'make-series' to prepare data, then 'render timechart'."
+How do you work with hierarchical data in KQL?,Recursive queries are not supported; flatten the data or use dynamic objects.
+How do you write recursive or iterative queries in KQL?,KQL does not support recursion; use multiple queries or functions.
+How does KQL fit into observability?,"Helps monitor system health, detect anomalies, and perform root cause analysis."
+How is KQL different from SQL?,"KQL is a read-only query language optimized for logs and telemetry data, whereas SQL supports full CRUD operations."
+How would you explain KQL to a non-technical person?,A way to search through logs using filters and rules.
+What are common KQL mistakes?,"Incorrect joins, not filtering enough, large dataset queries without bins."
+What are the most powerful features of KQL?,"Time-series aggregation, fast queries, dynamic parsing, joins."
+What does 'distinct' do?,Returns unique combinations of the selected columns.
+What does 'explain' do in KQL?,'explain' prefixed to a SQL statement translates it into KQL. It does not show an execution plan.
+What does 'has_all()' do?,Returns rows where the text column contains all specified values.
+What does 'hasprefix' do?,'hasprefix' matches a term prefix inside the text; 'startswith' matches the start of the whole string.
+What does 'hint.shufflekey' do?,Optimizes large joins by distributing based on a key.
+What does 'in' do in KQL?,Checks whether a value exists in a given list.
+What does 'isnull()' or 'isnotnull()' do?,Checks whether a field has or doesn't have a null value.
+What does 'mv-apply' do?,Applies a subquery to each element of a multi-value array.
+What does 'project-away' do?,Removes specified columns from the output.
+What does 'project-keep' do?,Keeps only the listed columns.
+What does 'project-rename' do?,Renames columns in the output.
+What does 'project-reorder' do?,Changes the column order in the output.
+What does 'serialize' do?,Preserves row order across pipeline stages.
+What does 'summarize' do?,"Aggregates data using functions like count(), avg(), sum(), and groups by specified columns."
+What does the 'project' operator do in KQL?,It selects specific columns to return from the dataset.
+What does the 'top' operator do?,Returns the top N rows sorted by a specified column.
+What if a query times out?,"Reduce time range, use filters early, avoid full-table scans."
+What is 'arg_max()' and 'arg_min()'?,Returns rows with the max or min value for a group.
+What is 'bin()' used for?,To group time or numeric values into buckets.
+What is 'datatable' used for?,Creates inline tables useful for testing or examples.
+What is 'datetime_diff()'?,Returns the difference between two datetime values.
+What is 'make-series'?,Creates a series of data points grouped by time or other dimensions.
+What is 'materialize()' used for?,Caches intermediate query results for reuse in the same query.
+What is 'mv-expand' used for?,To expand arrays or dynamic fields into individual records.
+What is 'parse_json()' used for?,"parse_json(), also available as its alias todynamic(), converts a string containing JSON into a dynamic object."
+What is 'range' used for in KQL?,"Generates a sequence of values (e.g., for dates or numbers)."
+What is 'row_cumsum()' used for?,Calculates cumulative sum over ordered rows.
+What is 'toscalar()' used for?,Extracts a single value to use in a filter or comparison.
+What is KQL and where is it used?,"Kusto Query Language (KQL) is used in Azure Monitor, Log Analytics, Microsoft Sentinel, and Application Insights to query log and telemetry data."
+What is the 'let' statement in KQL?,Used to declare variables or reusable expressions.
+What is the 'parse' operator used for?,To extract structured fields from unstructured text.
+What is the 'union' operator used for?,Combines rows from multiple tables or queries.
+What is the difference between 'parse' and 'extract'?,"'parse' is more readable for structured strings, 'extract' uses regex."
+What is the difference between 'parse' and 'extractjson()'?,'parse' extracts data with pattern matching; 'extractjson()' extracts JSON values.
+What is the difference between 'top' and 'top-nested'?,'top' returns top rows by a column; 'top-nested' returns top N per group.
+What is the purpose of the 'where' clause in KQL?,To filter records based on a specified condition.
+What is the use of 'bag_unpack()'?,Unpacks dynamic objects into separate columns.
+What is the use of the 'extend' operator?,Adds calculated columns to a result set.
+What is the use of the 'render' operator?,"To visualize data, e.g., render timechart, barchart, piechart."
+What’s the difference between 'count' and 'countif'?,'count' counts all rows; 'countif' counts rows meeting a condition.
+"What’s the difference between 'has', 'contains', and '=='?","'has' checks for word presence, 'contains' for substring, '==' for exact match."
+What’s the difference between 'invoke' and 'execute'?,'invoke' calls functions in KQL; 'execute' is not used in KQL.
+What’s the difference between 'render timechart' and 'barchart'?,"Timechart shows trends over time, barchart compares static values."
+What’s the use of 'case()' in KQL?,Implements conditional branching like an if-else block.
+What’s your approach to debugging KQL queries?,"Start small, add filters incrementally, and verify intermediate output."

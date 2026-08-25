@@ -25,6 +25,7 @@ from anki.collection import Collection, DeckIdLimit, ExportAnkiPackageOptions
 DECKS = {
     "powershell": "PowerShell",
     "python": "Python",
+    "kql": "KQL",
 }
 
 COLLECTION = Path.home() / ".local/share/Anki2/User 1/collection.anki2"

@@ -14,6 +14,7 @@ date in the deck's section below.
 |---|---|---|
 | [powershell](powershell/) | 133 | PowerShell from the basics through scripting, checked current for PowerShell 7 in August 2026 |
 | [python](python/) | 125 | Python fundamentals with a security slant, written from a PowerShell background, checked current in August 2026 |
+| [kql](kql/) | 118 | Kusto Query Language for logs and hunting, from operators through time series, checked current in August 2026 |
 
 More subjects land here one at a time.
 
@@ -35,12 +36,29 @@ equivalent, because the deck was written while crossing from one
 language to the other, and that bridge is the fastest way over for
 anyone making the same crossing.
 
+## KQL
+
+The query language behind Azure Monitor, Log Analytics, and Microsoft
+Sentinel: the core operators, joins and their hints, dynamic data and
+JSON parsing, time series with make-series, and the query shapes
+security work leans on, failed logons, spikes, correlation across
+tables. Cards state what exists in the language and name what does
+not, because half of writing good KQL is knowing which SQL habit has
+no equivalent here.
+
 ## Updating
 
 Decks are exported from the collection with
 [scripts/export.py](scripts/export.py). Corrections are welcome: open
 an issue naming the deck, the card front, and what is wrong with the
 back.
+
+## If these help
+
+Thanks for reading this far. If a deck saves you study time, the
+other repositories on [my profile](https://github.com/tltaylor1) may
+be worth a look too, and a star on the ones you use helps other
+people find them.
 
 ## License
 
