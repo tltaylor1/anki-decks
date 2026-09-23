@@ -1,0 +1,39 @@
+# Gates for a repository of study decks: the writing rules, the marker
+# scan, and the parity of each deck's two files. Actions are pinned by
+# full commit hash and tools are checksum-verified before they run.
+name: checks
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  writing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: install vale, verified
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -sSfL --retry 3 --retry-delay 2 --retry-connrefused -o vale.tar.gz https://github.com/errata-ai/vale/releases/download/v3.17.0/vale_3.17.0_Linux_64-bit.tar.gz
+          echo "a903f1f60c3293fac643e0137f599a462881cc691ee19d6120dcfc786f1be86d  vale.tar.gz" | sha256sum -c -
+          tar -xzf vale.tar.gz vale
+      - name: writing rules
+        run: git ls-files -z "*.md" | xargs -0 "$RUNNER_TEMP/vale"
+      - name: forbid deferred-work markers
+        run: |
+          ! grep -rnE "\b(TODO|FIXME|HACK|XXX)\b" --exclude-dir=.git --exclude-dir=.github --exclude=.pre-commit-config.yaml .
+      # Each deck's package and CSV twin describe the same cards, and the
+      # README's counts are the files' counts.
+      - name: deck parity
+        run: python3 scripts/check_parity.py

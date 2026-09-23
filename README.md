@@ -6,6 +6,8 @@ here, one folder per deck. Each folder holds the deck two ways: an
 plain front and back columns, which is the file to read without Anki
 and the file git diffs when cards change.
 
+A parity check, `scripts/check_parity.py`, opens each package and compares its cards with the CSV, and holds the counts above to the files; it runs on every change.
+
 Every deck is written from documentation and daily use, and each card
 is checked for current truth before it is published, with the check
 date in the deck's section below.
