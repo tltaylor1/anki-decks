@@ -1,6 +1,6 @@
 # Anki decks
 
-The flashcard decks maintained in a live Anki collection and published
+All flashcard decks maintained in a live Anki collection and published
 here, one folder per deck. Each folder holds the deck two ways: an
 `.apkg` you import into Anki with File, then Import, and a `.csv` with
 plain front and back columns, which is the file to read without Anki
