@@ -1,5 +1,7 @@
 # Anki decks
 
+## What this is
+
 Flashcard decks maintained in a live Anki collection and published
 here, one folder per deck. Each folder holds the deck two ways: an
 `.apkg` you import into Anki with File, then Import, and a `.csv` with
@@ -11,6 +13,12 @@ A parity check, `scripts/check_parity.py`, opens each package and compares its c
 Every deck is written from documentation and daily use, and each card
 is checked for current truth before it is published, with the check
 date in the deck's section below.
+
+Seven decks, 1,262 cards: PowerShell 133, Python 125, Kusto 118, Bicep
+50, cybersecurity 184, AWS Security Specialty 426, compliance frameworks
+226. The counts above each deck are held to the files by the parity
+check, so a card added in Anki and not exported fails rather than
+quietly disagreeing with the table.
 
 | Deck | Cards | Scope |
 |---|---|---|
