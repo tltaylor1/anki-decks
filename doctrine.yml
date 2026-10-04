@@ -1,3 +1,6 @@
 # Read by build-doctrine's scorer: the repository's kind decides which rules apply.
 kind: study
 invites_contributions: true
+name_allowlist:
+  - compliance-frameworks/compliance-frameworks.csv
+  - .vale/styles/Proselint/Cliches.yml
