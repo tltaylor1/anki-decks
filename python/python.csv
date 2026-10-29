@@ -1,4 +1,6 @@
 front,back
+"filename = ""report_2024.csv"". What does filename[-3:] return?","""csv"", the last 3 characters."
+"filename = ""report_2024.csv"". What does filename[:-4] return?","""report_2024"", everything except the last 4 characters, which drops "".csv""."
 How do you change string case?,"s.lower(), s.upper(), s.title(). (Useful for case-insensitive matching, like normalizing usernames or domains.)"
 How do you check for None correctly?,"Use 'is': if x is None. (Prefer 'is' over '==' here, just like PowerShell teaches you to write $null -eq $x to be safe.)"
 How do you check if a string contains a substring?,"'error' in line returns True/False. For position, use line.find('x') (returns -1 if absent) or line.index('x') (raises if absent). (The 'in' test is the quick membership check.)"
