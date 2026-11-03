@@ -1,4 +1,8 @@
 front,back
+"a = [10, 20, 30]. What does a.pop() return?",30. pop removes the last item and returns it.
+"a = [10, 20, 30]. What does a.remove(20) return?",None. remove deletes by value and returns nothing.
+"a = [1]. a.append([2, 3]) gives what?","[1, [2, 3]]. append adds the list as one item."
+"a = [1]. a.extend([2, 3]) gives what?","[1, 2, 3]. extend adds each item."
 "filename = ""report_2024.csv"". What does filename[-3:] return?","""csv"", the last 3 characters."
 "filename = ""report_2024.csv"". What does filename[:-4] return?","""report_2024"", everything except the last 4 characters, which drops "".csv""."
 How do you change string case?,"s.lower(), s.upper(), s.title(). (Useful for case-insensitive matching, like normalizing usernames or domains.)"
